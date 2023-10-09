@@ -1,12 +1,13 @@
-FROM node:lts AS runtime
+# This file is only suitable to be used during development, not production.
+# It only sets up and installs the packages. 
+# The source will be mounted as a volume by Docker compose.
+
+FROM node:lts
+
 WORKDIR /app
 
-COPY . .
+COPY package*.json .
 
-RUN npm install
-RUN npm run build
+RUN npm ci --audit=false --fund=false
 
-ENV HOST=0.0.0.0
-ENV PORT=4321
-EXPOSE 8080
-CMD node ./dist/server/entry.mjs
+CMD ["npm", "start"]
