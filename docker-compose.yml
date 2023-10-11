@@ -2,11 +2,11 @@ services:
   astro_web:
     build: .
     ports:
-      - "3000:3000"
-    volumes:
-      # mount lockal source into container
-      - "./:/app"
-      # paths below are ephemeral valumes
-      - "/app/.tscache"
-      - "/app/dist"
-      - "/app/node_modules"
+      - "8080:4321"
+    # volumes:
+    #   # mount lockal source into container
+    #   - "./:/app"
+    #   # paths below are ephemeral valumes
+    #   - "/app/.tscache"
+    #   - "/app/dist"
+    #   - "/app/node_modules"

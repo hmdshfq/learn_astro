@@ -1,13 +1,15 @@
-# This file is only suitable to be used during development, not production.
-# It only sets up and installs the packages. 
-# The source will be mounted as a volume by Docker compose.
+#This file only for prodaction
+#It's build and expose the site
 
-FROM node:lts
-
+FROM node:lts AS runtime
 WORKDIR /app
 
-COPY package*.json .
+COPY . .
 
-RUN npm ci --audit=false --fund=false
+RUN npm install
+RUN npm run build
 
-CMD ["npm", "start"]
+ENV HOST=0.0.0.0
+ENV PORT=4321
+EXPOSE 8080
+CMD node ./dist/server/entry.mjs
