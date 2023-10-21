@@ -7,58 +7,123 @@ const pageTitle = "Home page";
 
 <BaseLayout pageTitle={pageTitle}>
 
-	<h2>About me</h2>
-	<Greeting client:load messages={["Hi", "Hello", "Howdy", "Hey there"]} />
-	<Greeting client:load messages={["Hej", "Hallo", "Hola", "Habari"]} />
-	<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident, itaque! Consectetur dicta voluptate inventore repellat commodi labore ad libero doloremque neque nisi dolores molestias quam excepturi blanditiis enim quaerat magnam earum officiis alias, maxime deleniti sed totam consequuntur? Labore, optio quo magni sequi omnis suscipit est blanditiis vero dolor fuga.
-	</p>
-	<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad officiis nisi quae, ipsum beatae, eos similique est eaque quo nemo distinctio? Similique illum blanditiis voluptatum accusantium aut aliquid laboriosam natus!</p>
-	<ul>
-		<li>Lorem ipsum dolor sit amet.</li>
-		<li>Lorem ipsum dolor sit amet.</li>
-		<li>Lorem ipsum dolor sit amet.</li>
-		<li>Lorem ipsum dolor sit amet.</li>
-		<li>Lorem ipsum dolor sit amet.</li>
-		<li>Lorem ipsum dolor sit amet.</li>
-		<li>Lorem ipsum dolor sit amet.</li>
-		<li>Lorem ipsum dolor sit amet.</li>
-		<li>Lorem ipsum dolor sit amet.</li>
-		<li>Lorem ipsum dolor sit amet.</li>
-		<li>Lorem ipsum dolor sit amet.</li>
-		<li>Lorem ipsum dolor sit amet.</li>
-		<li>Lorem ipsum dolor sit amet.</li>
-		<li>Lorem ipsum dolor sit amet.</li>
-		<li>Lorem ipsum dolor sit amet.</li>
-	</ul>
+	<section id="about">
+		<h2>About me</h2>
+		<Greeting client:load messages={["Hi", "Hello", "Howdy", "Hey there"]} />
+		<Greeting client:load messages={["Hej", "Hallo", "Hola", "Habari"]} />
+		<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident, itaque! Consectetur dicta voluptate inventore repellat commodi labore ad libero doloremque neque nisi dolores molestias quam excepturi blanditiis enim quaerat magnam earum officiis alias, maxime deleniti sed totam consequuntur? Labore, optio quo magni sequi omnis suscipit est blanditiis vero dolor fuga.
+		</p>
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad officiis nisi quae, ipsum beatae, eos similique est eaque quo nemo distinctio? Similique illum blanditiis voluptatum accusantium aut aliquid laboriosam natus!</p>
+		<ul>
+			<li>Lorem ipsum dolor sit amet.</li>
+			<li>Lorem ipsum dolor sit amet.</li>
+			<li>Lorem ipsum dolor sit amet.</li>
+			<li>Lorem ipsum dolor sit amet.</li>
+			<li>Lorem ipsum dolor sit amet.</li>
+			<li>Lorem ipsum dolor sit amet.</li>
+			<li>Lorem ipsum dolor sit amet.</li>
+			<li>Lorem ipsum dolor sit amet.</li>
+			<li>Lorem ipsum dolor sit amet.</li>
+			<li>Lorem ipsum dolor sit amet.</li>
+			<li>Lorem ipsum dolor sit amet.</li>
+			<li>Lorem ipsum dolor sit amet.</li>
+			<li>Lorem ipsum dolor sit amet.</li>
+			<li>Lorem ipsum dolor sit amet.</li>
+			<li>Lorem ipsum dolor sit amet.</li>
+		</ul>
+	</section>
 
-	<h2 id="work">Work</h2>
-	<div class="container">
-		<div class="work-date">
-			2022 - 2023
-		</div>
-		<div class="separator">
-			<div class="circle">
-
+	<section id="work">
+		<h2>Work Expirience</h2>
+		<div class="container">
+			<div class="duration">
+				July 2023 - current
 			</div>
-			<div class="work-description">
-				Company LLC
+			<div class="description">
+				<span class="v-line"></span>
+				<span class="circle"></span>
+				<h3>Chef @ MacDonalds(Fulltime)</h3>
+				<p class="city">City |
+					<span><a href="https://mackdonalds.com" target="_blank">https://mackdonalds.com</a></span>
+				</p>
 				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam in corrupti vitae, ab accusantium distinctio mollitia iste magnam doloremque sed aperiam, eveniet alias repellendus officiis dolor consectetur provident. Repellendus, fuga.</p>
 			</div>
 		</div>
-	</div>
-	<ul>
-		<li>Lorem ipsum dolor sit amet.</li>
-		<li>Lorem ipsum dolor sit amet.</li>
-		<li>Lorem ipsum dolor sit amet.</li>
-		<li>Lorem ipsum dolor sit amet.</li>
-		<li>Lorem ipsum dolor sit amet.</li>
-	</ul>
+		<div class="container">
+			<div class="duration">
+				December 2020 - May 2023
+			</div>
+			<div class="description">
+				<span class="v-line"></span>
+				<span class="circle"></span>
+				<h3>Manager @ BurgerKing(Fulltime)</h3>
+				<p class="city">City |
+					<span><a href="https://burgerking.com" target="_blank">https://burgerking.com</a></span>
+				</p>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam in corrupti vitae, ab accusantium distinctio mollitia iste magnam doloremque sed aperiam, eveniet alias repellendus officiis dolor consectetur provident. Repellendus, fuga.</p>
+			</div>
+		</div>
+		<div class="container">
+			<div class="duration">
+				September 2015 - October 2020
+			</div>
+			<div class="description">
+				<span class="v-line"></span>
+				<span class="circle"></span>
+				<h3>Senior principal cleaner @ KFC(Fulltime)</h3>
+				<p class="city">City |
+					<span><a href="https://kfc.com" target="_blank">https://kfc.com</a></span>
+				</p>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam in corrupti vitae, ab accusantium distinctio mollitia iste magnam doloremque sed aperiam, eveniet alias repellendus officiis dolor consectetur provident. Repellendus, fuga.</p>
+			</div>
+		</div>
+	</section>
 
-	<h2 id="education">Education</h2>
-	<ul>
-		<li>Lorem ipsum dolor sit amet.</li>
-		<li>Lorem ipsum dolor sit amet.</li>
-	</ul>
+	<section id="education">
+		<h2>Education</h2>
+		<div class="container">
+			<div class="duration">
+				June 2023 - current
+			</div>
+			<div class="description">
+				<span class="v-line"></span>
+				<span class="circle"></span>
+				<h3>Frontend dev @ CodeYourPath (online mentorship)</h3>
+				<p class="city">CodeYourPath |
+					<span><a href="https://codeyourpath.com" target="_blank">https://codeyourpath.com</a></span>
+				</p>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam in corrupti vitae, ab accusantium distinctio mollitia iste magnam doloremque sed aperiam, eveniet alias repellendus officiis dolor consectetur provident. Repellendus, fuga.</p>
+			</div>
+		</div>
+		<div class="container">
+			<div class="duration">
+				September 2011 - June 2015
+			</div>
+			<div class="description">
+				<span class="v-line"></span>
+				<span class="circle"></span>
+				<h3>Computer Science @ Avans (bachelor)</h3>
+				<p class="city">'s-Hertogenbosch | Minor: Multimedia
+					<span><a href="" target="_blank"></a></span>
+				</p>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam in corrupti vitae, ab accusantium distinctio mollitia iste magnam doloremque sed aperiam, eveniet alias repellendus officiis dolor consectetur provident. Repellendus, fuga.</p>
+			</div>
+		</div>
+		<div class="container">
+			<div class="duration">
+				September 2008 - may 2011
+			</div>
+			<div class="description">
+				<span class="v-line"></span>
+				<span class="circle"></span>
+				<h3>Havo @ Rodenborch (havo)</h3>
+				<p class="city">Rosmalen 
+					<span><a href="" target="_blank"></a></span>
+				</p>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam in corrupti vitae, ab accusantium distinctio mollitia iste magnam doloremque sed aperiam, eveniet alias repellendus officiis dolor consectetur provident. Repellendus, fuga.</p>
+			</div>
+		</div>
+	</section>
 
 	<h2 id="skills">Skills</h2>
 	<ul>
