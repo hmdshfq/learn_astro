@@ -30,6 +30,7 @@ p {
   margin: 0;
 }
 
+/* Text animation */
 .text-animation-container {
   position: relative;
   height: 100%;
@@ -74,13 +75,14 @@ nav {
   color: black;
 }
 
-.nav-links {
+.desktop-menu {
   display: none;
-  top: 5rem;
-  left: 48px;
+}
+
+.nav-links {
   margin: 0;
-  list-style: none;
   padding: 0;
+  list-style: none;
 }
 
 .nav-links a {
@@ -115,22 +117,24 @@ nav {
   background-color: #000000;
 }
 
-.mobile-nav-menu {
+.mobile-menu {
+  display: none;
   position: fixed;
   top: 4rem;
   right: 0.5rem;
   margin-top: 0.5rem;
-  width: 10rem;
-  display: block;
   padding: 0.5rem;
+  width: 10rem;
   border-radius: 0.5rem;
+  z-index: 10;
+  background-color: rgb(226, 226, 226);
 }
 
 .expanded {
   display: unset;
 }
 
-/* Work section style */
+/* Work/education section style */
 section {
   margin: auto;
   padding-top: 6rem;
@@ -192,25 +196,6 @@ section {
   margin-left: -3rem;
 }
 
-/* Tags style */
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.tag {
-  margin: 0.25em;
-  border: dotted 1px #a1a1a1;
-  border-radius: .5em;
-  padding: .5em 1em;
-  font-size: 1.15em;
-  background-color: #F8FCFD;
-}
-
-.tag a {
-  color: #00539F;
-}
-
 /* Dark/Light mode */
 html.dark {
   background-color: #100d3a;
@@ -231,17 +216,17 @@ html.dark {
 
 /* Media mobile-first */
 @media screen and (min-width: 636px) {
+  .desktop-menu {
+    display: block;
+  }
+  
   .nav-links {
     display: flex;
-    background: none;
     gap: 20px; 
+    background: none;
   }
   
   .hamburger {
-    display: none;
-  }
-
-  .mobile-nav-menu {
     display: none;
   }
   

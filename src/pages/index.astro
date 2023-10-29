@@ -3,34 +3,23 @@ import Greeting from '../components/Greeting';
 import WorkSection from '../components/WorkSection.astro';
 import EducationSection from '../components/EducationSection.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import AboutSection from '../components/AboutSection.astro';
+import ContactSection from '../components/ContactSection.astro';
 
 const pageTitle = "Home page";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
 
-	<section id="about">
-		<h2>About me</h2>
-		<Greeting client:load messages={["Hi", "Hello", "Howdy", "Hey there"]} />
-		<Greeting client:load messages={["Hej", "Hallo", "Hola", "Habari"]} />
-		<div class="text-animation-container">
-			<p >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident, itaque! Consectetur dicta voluptate inventore repellat commodi labore ad libero doloremque neque nisi dolores molestias quam excepturi blanditiis enim quaerat magnam earum officiis alias, maxime deleniti sed totam consequuntur? Labore, optio quo magni sequi omnis suscipit est blanditiis vero dolor fuga.
-			</p>
-			<div class="text-animation"></div>
-		</div>
-		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad officiis nisi quae, ipsum beatae, eos similique est eaque quo nemo distinctio? Similique illum blanditiis voluptatum accusantium aut aliquid laboriosam natus!</p>
+	<AboutSection />
+
+	<WorkSection />
+
+	<EducationSection />
+
+	<section id="projects">
+		<h2>Projects</h2>
 		<ul>
-			<li>Lorem ipsum dolor sit amet.</li>
-			<li>Lorem ipsum dolor sit amet.</li>
-			<li>Lorem ipsum dolor sit amet.</li>
-			<li>Lorem ipsum dolor sit amet.</li>
-			<li>Lorem ipsum dolor sit amet.</li>
-			<li>Lorem ipsum dolor sit amet.</li>
-			<li>Lorem ipsum dolor sit amet.</li>
-			<li>Lorem ipsum dolor sit amet.</li>
-			<li>Lorem ipsum dolor sit amet.</li>
-			<li>Lorem ipsum dolor sit amet.</li>
-			<li>Lorem ipsum dolor sit amet.</li>
 			<li>Lorem ipsum dolor sit amet.</li>
 			<li>Lorem ipsum dolor sit amet.</li>
 			<li>Lorem ipsum dolor sit amet.</li>
@@ -38,30 +27,6 @@ const pageTitle = "Home page";
 		</ul>
 	</section>
 
-	<WorkSection />
-
-	<EducationSection />
-
-	<h2 id="skills">Skills</h2>
-	<ul>
-		<li>Lorem ipsum dolor sit amet.</li>
-		<li>Lorem ipsum dolor sit amet.</li>
-	</ul>
-
-	<h2 id="projects">Projects</h2>
-	<ul>
-		<li>Lorem ipsum dolor sit amet.</li>
-		<li>Lorem ipsum dolor sit amet.</li>
-		<li>Lorem ipsum dolor sit amet.</li>
-		<li>Lorem ipsum dolor sit amet.</li>
-	</ul>
-
-	<h2 id="links">Links</h2>
-	<ul>
-		<li>Lorem ipsum dolor sit amet.</li>
-		<li>Lorem ipsum dolor sit amet.</li>
-		<li>Lorem ipsum dolor sit amet.</li>
-		<li>Lorem ipsum dolor sit amet.</li>
-	</ul>
+	<ContactSection />
 
 </BaseLayout>
