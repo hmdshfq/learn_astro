@@ -1,12 +1,12 @@
 ---
-import Greeting from '../components/Greeting';
 import WorkSection from '../components/WorkSection.astro';
 import EducationSection from '../components/EducationSection.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import AboutSection from '../components/AboutSection.astro';
 import ContactSection from '../components/ContactSection.astro';
+import Projects from '../components/Projects.astro';
 
-const pageTitle = "Home page";
+const pageTitle = "Pavel Paliakou";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
@@ -17,15 +17,7 @@ const pageTitle = "Home page";
 
 	<EducationSection />
 
-	<section id="projects">
-		<h2>Projects</h2>
-		<ul>
-			<li>Lorem ipsum dolor sit amet.</li>
-			<li>Lorem ipsum dolor sit amet.</li>
-			<li>Lorem ipsum dolor sit amet.</li>
-			<li>Lorem ipsum dolor sit amet.</li>
-		</ul>
-	</section>
+	<Projects />
 
 	<ContactSection />
 

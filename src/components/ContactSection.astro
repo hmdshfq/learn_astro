@@ -1,19 +1,23 @@
 ---
+import Social from "./Social.astro";
 
 ---
+
 <section id="contact">
     <h1>Contact</h1>
+
     <div style="width: 100%;">
-        <h3>Contact with me</h3>
+        <h2>Contact with me</h2>
         <p>
             If you want to know more about me or my work, send me a message. 
             <br>
             I'd love to hear from you.
         </p>
     </div>
+
     <div class="contact-container">
         <div class="contact-form">
-            <form>
+            <form action="mailto:contact@yourdomain.com" method="post" enctype="text/plain">
                 <div class="name">
                     <label for="name">Name</label>
                     <input id="name" type="text" placeholder="Enter your name" required="">
@@ -27,18 +31,19 @@
                     <textarea id="message" placeholder="Enter your message" required=""></textarea>
                 </div>
                 <div class="send">
-                    <a href="">Send email directly</a>
+                    <a href="mailto:contact@yourdomain.com">Send email directly</a>
                     <button type="submit">Send</button>
                 </div>
             </form>
         </div>
+        
         <div class="contact-data">
             <h2>Email</h2>
             <a href="#contact">email</a>
             <h2>Address</h2>
             <a href="#contact">Poland</a>
             <h2>Social</h2>
-            <a href="#contact">some links</a>
+            <Social />
         </div>
     </div>
 </section>
@@ -51,14 +56,14 @@
 
     .contact-container {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: space-between;
         width: 100%;
     }
 
     .contact-form {
         width: 100%;
-        padding-right: 2rem;
+        padding-right: 0;
     }
 
     label {
@@ -118,10 +123,22 @@
     .contact-data {
         display: flex;
         flex-direction: column;
-        align-items: flex-end;
+        align-items: flex-start;
         width: 100%;
-
         margin-top: 1.5rem;
+    }
 
+    @media screen and (min-width: 636px) {
+        .contact-container {
+            flex-direction: row;
+        }
+
+        .contact-data {
+            align-items: flex-end;
+        }
+
+        .contact-form {
+            padding-right: 2rem;
+        }
     }
 </style>

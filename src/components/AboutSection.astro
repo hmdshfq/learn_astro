@@ -1,31 +1,21 @@
 ---
-
+import Skills from "./Skills.astro";
+import TextAnimation from "./TextAnimation.astro";
 ---
+
 <section id="about">
     <h1>About me</h1>
 
-    <div class="text-animation-container">
+    <TextAnimation delay="0s">
         <p >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident, itaque! Consectetur dicta voluptate inventore repellat commodi labore ad libero doloremque neque nisi dolores molestias quam excepturi blanditiis enim quaerat magnam earum officiis alias, maxime deleniti sed totam consequuntur? Labore, optio quo magni sequi omnis suscipit est blanditiis vero dolor fuga.
         </p>
-        <div class="text-animation"></div>
-    </div>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad officiis nisi quae, ipsum beatae, eos similique est eaque quo nemo distinctio? Similique illum blanditiis voluptatum accusantium aut aliquid laboriosam natus!</p>
-    <h3>Technologies and Tools</h3>
-    <ul>
-        <li>Lorem ipsum dolor sit amet.</li>
-        <li>Lorem ipsum dolor sit amet.</li>
-        <li>Lorem ipsum dolor sit amet.</li>
-        <li>Lorem ipsum dolor sit amet.</li>
-        <li>Lorem ipsum dolor sit amet.</li>
-        <li>Lorem ipsum dolor sit amet.</li>
-        <li>Lorem ipsum dolor sit amet.</li>
-        <li>Lorem ipsum dolor sit amet.</li>
-        <li>Lorem ipsum dolor sit amet.</li>
-        <li>Lorem ipsum dolor sit amet.</li>
-        <li>Lorem ipsum dolor sit amet.</li>
-        <li>Lorem ipsum dolor sit amet.</li>
-        <li>Lorem ipsum dolor sit amet.</li>
-        <li>Lorem ipsum dolor sit amet.</li>
-        <li>Lorem ipsum dolor sit amet.</li>
-    </ul>
+    </TextAnimation>
+
+    <TextAnimation delay="1s">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad officiis nisi quae, ipsum beatae, eos similique est eaque quo nemo distinctio? Similique illum blanditiis voluptatum accusantium aut aliquid laboriosam natus!</p>
+    </TextAnimation>
+
+    <h2>Technologies and Tools</h2>
+    <Skills/>
+
 </section>

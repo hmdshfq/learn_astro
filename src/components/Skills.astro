@@ -1,0 +1,42 @@
+---
+import JumpAnimation from "./JumpAnimation.astro";
+
+const skills = ["Java (SE)", "Spring (Spring Boot, JPA, Spring security)", "JUnit", "Mockito", "Maven", "SQL (MySQL, PostgreSQL)", "HTML", "JavaScript", "GIT (GitHub)", "Postman", "Docker & Kubernates", "Jenkins"];
+---
+
+<div class="skills">
+    {skills.map((skill) => (
+        <JumpAnimation>
+            <div class="skill-container">
+                <img src="" alt="logo">
+                <p>{skill}</p>
+            </div>
+        </JumpAnimation>)
+    )}
+</div>
+
+<style>
+    .skills {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .skill-container {
+        display: flex;
+        align-items: center;
+        width: 12rem;
+        margin: 1rem;
+        padding: 0.5rem 1rem;
+        border-style: solid;
+        border-radius: 0.5rem;
+        color: black;
+        background-color: rgb(249 250 251);
+        cursor: pointer;
+    }
+
+    .skills p {
+        margin-left: 1rem;
+    }
+</style>
