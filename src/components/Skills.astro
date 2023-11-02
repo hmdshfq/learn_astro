@@ -1,15 +1,31 @@
 ---
 import JumpAnimation from "./animations/JumpAnimation.astro";
 
-const skills = ["Java (SE)", "Spring (Spring Boot, JPA, Spring security)", "JUnit", "Mockito", "Maven", "SQL (MySQL, PostgreSQL)", "HTML", "JavaScript", "GIT (GitHub)", "Postman", "Docker & Kubernates", "Jenkins"];
+const skills = [
+    {link: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg", name: "Java (SE)"}, 
+    {link: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg", name:  "Spring"}, 
+    {link: "../../public/JUnit.svg", name: "JUnit"}, 
+    {link: "../../public/Mockito_Logo.png", name: "Mockito"}, 
+    {link: "../../public/maven.svg", name: "Maven"}, 
+    {link: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg", name: "MySQL"},
+    {link: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg", name: "PostgreSQL"}, 
+    {link: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg", name: "HTML"}, 
+    {link: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg", name: "CSS"}, 
+    {link: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg", name: "JavaScript"}, 
+    {link: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg", name: "GIT"}, 
+    {link: "https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg", name: "Postman"}, 
+    {link: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg", name: "Docker"},
+    {link: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg", name: "Kubernates"}, 
+    {link: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg", name: "Jenkins"}
+];
 ---
 
 <div class="skills">
     {skills.map((skill) => (
         <JumpAnimation>
             <div class="skill-container">
-                <img src="" alt="logo">
-                <p>{skill}</p>
+                <img src={skill.link}>
+                <p>{skill.name}</p>
             </div>
         </JumpAnimation>)
     )}
@@ -27,16 +43,22 @@ const skills = ["Java (SE)", "Spring (Spring Boot, JPA, Spring security)", "JUni
         display: flex;
         align-items: center;
         width: 12rem;
+        height: 4.375rem;
         margin: 1rem;
         padding: 0.5rem 1rem;
-        border-style: solid;
-        border-radius: 0.5rem;
-        color: black;
+        // border-style: solid;
+        // border-radius: 0.5rem;
+        // color: black;
         background-color: rgb(249 250 251);
         cursor: pointer;
     }
 
+    img {
+        width: 3rem;
+    }
+
     .skills p {
+        font-size: 1rem;
         margin-left: 1rem;
     }
 </style>

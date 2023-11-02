@@ -35,7 +35,7 @@ h3 {
   margin: 0;
   font-weight: 700;
   line-height: 1.75rem;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
 }
 
 p {
@@ -53,7 +53,23 @@ section {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   padding-bottom: 0;
-}*
+}
+
+.resume {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  padding: 0.5rem 2rem;
+  margin-bottom: 2rem;
+  border-radius: 0.375rem;
+  background-color: rgb(99, 102, 241);
+  color: white;
+  cursor: pointer;
+}
+
+.resume:hover {
+  background-color: rgb(125, 127, 255);
+}
 
 /* nav styles */
 nav {
@@ -118,17 +134,25 @@ nav {
   display: none;
   position: fixed;
   top: 4rem;
+  z-index: 10;
+  background-color: rgb(226, 226, 226);
+  /*Smaill menu*/
+  width: 10rem;
   right: 0.5rem;
   margin-top: 0.5rem;
   padding: 0.5rem;
-  width: 10rem;
   border-radius: 0.5rem;
-  z-index: 10;
-  background-color: rgb(226, 226, 226);
+
+  /*Wide menu*/
+  /* width: 100%; */
 }
 
 .expanded {
   display: unset;
+}
+
+.hide {
+  display: none;
 }
 
 /* Work/education section style */
@@ -153,7 +177,7 @@ nav {
 
 .city {
   line-height: 1.25rem;
-  font-size: 0.875rem;
+  font-size: 1rem;
   margin: 0;
   color:  rgb(107 114 128);
 }

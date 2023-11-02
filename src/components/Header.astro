@@ -4,7 +4,7 @@ import Navigation from "./menu/Navigation.astro";
 import ThemeIcon from './menu/ThemeIcon.astro';
 ---
 <header>
-    <nav>
+    <nav id="menu">
         <div class="logo">
             <a href="/">Site Logo</a>
         </div> 
@@ -16,13 +16,16 @@ import ThemeIcon from './menu/ThemeIcon.astro';
     </nav>
 </header>
 
-<!-- 
-<style>
-.logo a {
-  color: black;
-}
 
-.dark .logo a {
-  color: white;
-}
-</style> -->
+<style>
+  .logo {
+    flex-shrink: 0;
+  }
+  /* .logo a {
+    color: black;
+  }
+
+  .dark .logo a {
+    color: white;
+  } */
+</style>
