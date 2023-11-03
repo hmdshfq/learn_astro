@@ -24,7 +24,7 @@ const skills = [
     {skills.map((skill) => (
         <JumpAnimation>
             <div class="skill-container">
-                <img src={skill.link}>
+                <img src={skill.link} />
                 <p>{skill.name}</p>
             </div>
         </JumpAnimation>)
@@ -46,9 +46,9 @@ const skills = [
         height: 4.375rem;
         margin: 1rem;
         padding: 0.5rem 1rem;
-        // border-style: solid;
-        // border-radius: 0.5rem;
-        // color: black;
+        /* border-style: solid;
+        color: black; */
+        border-radius: 0.5rem;
         background-color: rgb(249 250 251);
         cursor: pointer;
     }
