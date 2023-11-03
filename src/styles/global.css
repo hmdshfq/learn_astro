@@ -193,12 +193,24 @@ html.dark {
   color: #fff;
 }
 
-.dark nav {
+.dark .logo a {
+  color: white;
+}
+
+.dark nav, .mobile-menu {
   background-color: #3a385b;
 }
 
-.dark .logo a {
-  color: white;
+.dark .skill-container {
+  color: black;
+}
+
+.dark .text-animation {
+  background-color: #100d3a;
+}
+
+.dark .social-link {
+  fill: white;
 }
 
 /* Media mobile-first */

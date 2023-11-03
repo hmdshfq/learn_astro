@@ -2,7 +2,7 @@ document.querySelector('.hamburger').addEventListener('click', () => {
     document.querySelector('.mobile-menu').classList.toggle('expanded');
 })
 
-// Hide menu if clicked out of the menu
+// Hide menu if clicked out of the menu or nav bar
 window.addEventListener('click', function (e) {
     if (document.querySelector('.mobile-menu').classList.contains('expanded')
         &&
@@ -17,11 +17,10 @@ window.addEventListener('click', function (e) {
 let mobileMenuElements = document.querySelectorAll('.menu-button');
 
 for (var i = 0; i < mobileMenuElements.length; i++){
-    mobileMenuElements[i].addEventListener('click', () => {
-            document.querySelector('.mobile-menu').classList.toggle('expanded');
-        })
+    mobileMenuElements[i].addEventListener('click', () => 
+            document.querySelector('.mobile-menu').classList.remove('expanded')
+        )
 }
-
 
 // mobileMenuElements.map( (element) => {
 //     element.addEventListener('click', () => {
