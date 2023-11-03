@@ -49,10 +49,14 @@ section {
   width: 100%;
   max-width: 80rem;
   margin: auto;
-  padding-top: 4rem;
+  padding-top: 0;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
-  padding-bottom: 0;
+  padding-bottom: 4rem;
+}
+
+#about {
+  padding-top: 4rem;
 }
 
 .resume {
@@ -115,6 +119,11 @@ nav {
   color: white;
 }
 
+.nav-links a.active {
+  background-color: #000000;
+  color: white;
+}
+
 .hamburger {
   cursor: pointer;
   height: 40px;
@@ -151,10 +160,6 @@ nav {
   display: unset;
 }
 
-.hide {
-  display: none;
-}
-
 /* Work/education section style */
 .container {
   display: grid;
@@ -182,6 +187,11 @@ nav {
   color:  rgb(107 114 128);
 }
 
+.city a {
+  color: rgb(99, 102, 241);
+  text-decoration: none;
+}
+
 
 /* Dark/Light mode */
 html.dark {
@@ -197,7 +207,8 @@ html.dark {
   color: white;
 }
 
-.dark nav, .mobile-menu {
+.dark nav, 
+.dark .mobile-menu {
   background-color: #3a385b;
 }
 

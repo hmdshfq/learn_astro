@@ -105,6 +105,11 @@ import Social from "../Social.astro";
         align-items: center;
     }
 
+    .send a{
+        text-decoration: none;
+        color: rgb(99, 102, 241);
+    }
+
     button {
         width: 10rem;
         padding: 0.5rem 1rem;
@@ -128,7 +133,17 @@ import Social from "../Social.astro";
         gap: 1rem;
     }
 
+    .contact-data a {
+        font-weight: 600;
+        text-decoration: none;
+        color: rgb(99, 102, 241);
+    }
+
     @media screen and (min-width: 636px) {
+        #contact {
+            height: 100vh;
+        }   
+
         .contact-container {
             flex-direction: row;
         }

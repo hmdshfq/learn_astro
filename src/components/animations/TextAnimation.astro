@@ -1,5 +1,6 @@
 ---
 let delay = Astro.props;
+console.log(delay);
 ---
 
 <div class="text-animation-container">
@@ -23,7 +24,7 @@ let delay = Astro.props;
         animation-duration: 2s;
         animation-timing-function: linear;
         animation-fill-mode: forwards;
-        /* animation-delay: ${delay.delay}; */
+        /* animation-delay: {delay.delay}; */
     }
 
     @keyframes show-text {
