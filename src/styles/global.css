@@ -216,6 +216,10 @@ html.dark {
   color: black;
 }
 
+.text-animation {
+  background-color: white;
+}
+
 .dark .text-animation {
   background-color: #100d3a;
 }

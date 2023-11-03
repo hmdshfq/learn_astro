@@ -30,8 +30,8 @@ for (var i = 0; i < mobileMenuElements.length; i++) {
 
 //Active
 var sections = $('section')
-    , nav = $('nav')
-    , nav_height = nav.outerHeight();
+var nav = $('nav')
+var nav_height = nav.outerHeight();
 
 $(window).on('scroll', function () {
     var cur_pos = $(this).scrollTop();
@@ -52,11 +52,12 @@ $(window).on('scroll', function () {
 
 nav.find('a').on('click', function () {
     var $el = $(this)
-        , id = $el.attr('href');
+    var id = $el.attr('href');
 
     $('html, body').animate({
         scrollTop: $(id).offset().top - nav_height
-    }, 500);
+    }, 
+    500);
 
     return false;
 });
