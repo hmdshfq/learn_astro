@@ -1,5 +1,6 @@
 ---
 // let delay = Astro.props;
+// console.log(delay);
 ---
 
 <div class="text-animation-container">
@@ -19,17 +20,17 @@
         width: 100%;
         height: 100%;
         top: 0;
-        /* background-color: white; */
+        background-color: white;
         animation-name: show-text;
         animation-duration: 2s;
         animation-timing-function: linear;
         animation-fill-mode: forwards;
-        /* animation-delay: {delay.delay}; */
+        /* animation-delay: {delay}; */
     }
 
-    /* .dark .text-animation {
+    html.dark .text-animation {
         background-color: #100d3a;
-    } */
+    }
 
     @keyframes show-text {
         from{

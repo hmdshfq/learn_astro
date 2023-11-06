@@ -88,10 +88,6 @@ nav {
   background-color: rgb(226, 226, 226);
 }
 
-.logo a {
-  color: black;
-}
-
 .desktop-menu {
   display: none;
 }
@@ -203,10 +199,6 @@ html.dark {
   color: #fff;
 }
 
-.dark .logo a {
-  color: white;
-}
-
 .dark nav, 
 .dark .mobile-menu {
   background-color: #3a385b;
@@ -214,18 +206,6 @@ html.dark {
 
 .dark .skill-container {
   color: black;
-}
-
-.text-animation {
-  background-color: white;
-}
-
-.dark .text-animation {
-  background-color: #100d3a;
-}
-
-.dark .social-link {
-  fill: white;
 }
 
 /* Media mobile-first */

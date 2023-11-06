@@ -16,17 +16,17 @@ window.addEventListener('click', function (e) {
 // Hide menu if clicked on the link
 let mobileMenuElements = document.querySelectorAll('.menu-button');
 
-for (var i = 0; i < mobileMenuElements.length; i++) {
-    mobileMenuElements[i].addEventListener('click', () =>
-        document.querySelector('.mobile-menu').classList.remove('expanded')
-    )
-}
+// for (var i = 0; i < mobileMenuElements.length; i++) {
+//     mobileMenuElements[i].addEventListener('click', () =>
+//         document.querySelector('.mobile-menu').classList.remove('expanded')
+//     )
+// }
 
-// mobileMenuElements.map( (element) => {
-//     element.addEventListener('click', () => {
-//         document.querySelector('.mobile-menu').classList.toggle('expanded');
-//     })
-// })
+mobileMenuElements.forEach( (element) => {
+    element.addEventListener('click', () => {
+        document.querySelector('.mobile-menu').classList.remove('expanded');
+    })
+})
 
 //Active
 var sections = $('section')
