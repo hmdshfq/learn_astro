@@ -1,5 +1,7 @@
 ---
 import InfoCard from "../InformationCard.astro";
+import VerticalLine from "../VerticalLine.astro";
+
 const informations = [
     {
         dates : "June 2023 - current",
@@ -25,7 +27,7 @@ const informations = [
 ]
 ---
 
-<section id="education">
+<!-- <section id="education">
     <h1>Education</h1>
     {informations.map((e) => {
         // console.log(e);
@@ -37,4 +39,47 @@ const informations = [
             responsibilities = {e.responsibilities};
         />
     })}
+</section> -->
+
+<section id="education">
+    <h1>Education</h1>
+    <div class="container">
+        <div class="duration">
+            June 2023 - current
+        </div>
+        <div class="description">
+            <VerticalLine />
+            <h3>Frontend dev @ CodeYourPath (online mentorship)</h3>
+            <p class="city">CodeYourPath |
+                <span><a href="https://codeyourpath.com" target="_blank">https://codeyourpath.com</a></span>
+            </p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam in corrupti vitae, ab accusantium distinctio mollitia iste magnam doloremque sed aperiam, eveniet alias repellendus officiis dolor consectetur provident. Repellendus, fuga.</p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="duration">
+            September 2011 - June 2015
+        </div>
+        <div class="description">
+            <VerticalLine />
+            <h3>Computer Science @ Avans (bachelor)</h3>
+            <p class="city">'s-Hertogenbosch | Minor: Multimedia
+                <span><a href="" target="_blank"></a></span>
+            </p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam in corrupti vitae, ab accusantium distinctio mollitia iste magnam doloremque sed aperiam, eveniet alias repellendus officiis dolor consectetur provident. Repellendus, fuga.</p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="duration">
+            September 2008 - may 2011
+        </div>
+        <div class="description">
+            <VerticalLine />
+            <h3>Havo @ Rodenborch (havo)</h3>
+            <p class="city">Rosmalen 
+                <span><a href="" target="_blank"></a></span>
+            </p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam in corrupti vitae, ab accusantium distinctio mollitia iste magnam doloremque sed aperiam, eveniet alias repellendus officiis dolor consectetur provident. Repellendus, fuga.</p>
+        </div>
+    </div>
 </section>
