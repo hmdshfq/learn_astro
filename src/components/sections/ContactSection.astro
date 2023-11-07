@@ -1,11 +1,12 @@
 ---
 import Social from "../Social.astro";
+import Footer from "../Footer.astro";
 ---
 
 <section id="contact">
     <h1>Contact</h1>
 
-    <div style="width: 100%;">
+    <div>
         <h2>Contact with me</h2>
         <p>
             If you want to know more about me or my work, send me a message. 
@@ -15,7 +16,7 @@ import Social from "../Social.astro";
     </div>
 
     <div class="contact-container">
-        <div class="contact-form">
+        <div>
             <form action="mailto:contact@yourdomain.com" method="post" enctype="text/plain">
                 <div class="name">
                     <label for="name">Name</label>
@@ -45,9 +46,15 @@ import Social from "../Social.astro";
             <Social />
         </div>
     </div>
+
+    <Footer />
 </section>
 
 <style>
+    div {
+       width: 100%; 
+    }
+
     form div {
         margin-top: 1.5rem;
         margin-bottom: 1.5rem;
@@ -57,12 +64,6 @@ import Social from "../Social.astro";
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        width: 100%;
-    }
-
-    .contact-form {
-        width: 100%;
-        padding-right: 0;
     }
 
     label {
@@ -129,7 +130,6 @@ import Social from "../Social.astro";
         flex-direction: column;
         align-items: flex-start;
         width: 100%;
-        margin-top: 1.5rem;
         gap: 1rem;
     }
 
@@ -140,20 +140,12 @@ import Social from "../Social.astro";
     }
 
     @media screen and (min-width: 636px) {
-        #contact {
-            height: 100vh;
-        }   
-
         .contact-container {
             flex-direction: row;
         }
 
         .contact-data {
             align-items: flex-end;
-        }
-
-        .contact-form {
-            padding-right: 2rem;
         }
     }
 </style>
