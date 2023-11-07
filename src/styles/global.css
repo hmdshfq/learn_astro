@@ -55,26 +55,6 @@ section {
   padding-bottom: 4rem;
 }
 
-#about {
-  padding-top: 4rem;
-}
-
-.resume {
-  display: block;
-  text-align: center;
-  text-decoration: none;
-  padding: 0.5rem 2rem;
-  margin-bottom: 2rem;
-  border-radius: 0.375rem;
-  background-color: rgb(99, 102, 241);
-  color: white;
-  cursor: pointer;
-}
-
-.resume:hover {
-  background-color: rgb(125, 127, 255);
-}
-
 /* nav styles */
 nav {
   position: fixed;
@@ -110,11 +90,7 @@ nav {
 }
 
 .nav-links a:hover,
-.nav-links a:focus {
-  background-color: #000000;
-  color: white;
-}
-
+.nav-links a:focus,
 .nav-links a.active {
   background-color: #000000;
   color: white;
@@ -141,53 +117,12 @@ nav {
   top: 4rem;
   z-index: 10;
   background-color: rgb(226, 226, 226);
-  /*Smaill menu*/
-  width: 10rem;
-  right: 0.5rem;
-  margin-top: 0.5rem;
-  padding: 0.5rem;
-  border-radius: 0.5rem;
-
-  /*Wide menu*/
-  /* width: 100%; */
+  width: 100%;
 }
 
 .expanded {
   display: unset;
 }
-
-/* Work/education section style */
-.container {
-  display: grid;
-  margin-bottom: 4rem;
-}
-
-.duration {
-  line-height: 2;
-  text-align: right;
-  text-transform: uppercase;
-  padding-left: 3rem;
-  color: rgb(107 114 128);
-}
-
-.description {
-  grid-column: span 2;
-  position: relative;
-  padding-left: 3rem;
-}
-
-.city {
-  line-height: 1.25rem;
-  font-size: 1rem;
-  margin: 0;
-  color:  rgb(107 114 128);
-}
-
-.city a {
-  color: rgb(99, 102, 241);
-  text-decoration: none;
-}
-
 
 /* Dark/Light mode */
 html.dark {
@@ -204,10 +139,6 @@ html.dark {
   background-color: #3a385b;
 }
 
-.dark .skill-container {
-  color: black;
-}
-
 /* Media mobile-first */
 @media screen and (min-width: 636px) {
   .desktop-menu {
@@ -222,15 +153,5 @@ html.dark {
   
   .hamburger {
     display: none;
-  }
-  
-  .container {
-    display: grid;
-    grid-template-columns: repeat(3,minmax(0,1fr));
-    gap: 2rem;
-  }
-  
-  .duration {
-    padding-left: 0;
   }
 }

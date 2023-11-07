@@ -1,11 +1,12 @@
 ---
+import Resume from "../Resume.astro";
 import Skills from "../Skills.astro";
 import TextAnimation from "../animations/TextAnimation.astro";
 ---
 
 <section id="about">
     <h1>About me</h1>
-    <a class="resume" href="../../../public/Mockito_Logo.png" download>Resume</a>
+    <Resume />
 
     <TextAnimation>
         <p >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident, itaque! Consectetur dicta voluptate inventore repellat commodi labore ad libero doloremque neque nisi dolores molestias quam excepturi blanditiis enim quaerat magnam earum officiis alias, maxime deleniti sed totam consequuntur? Labore, optio quo magni sequi omnis suscipit est blanditiis vero dolor fuga.
@@ -22,3 +23,9 @@ import TextAnimation from "../animations/TextAnimation.astro";
     <Skills/>
 
 </section>
+
+<style>
+    #about {
+        padding-top: 4rem;
+    }
+</style>

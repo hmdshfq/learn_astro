@@ -83,3 +83,49 @@ const informations = [
         </div>
     </div>
 </section>
+
+<style>
+    /* Work/education section style */
+    .container {
+        display: grid;
+        margin-bottom: 4rem;
+    }
+
+    .duration {
+        line-height: 2;
+        text-align: right;
+        text-transform: uppercase;
+        padding-left: 3rem;
+        color: rgb(107 114 128);
+    }
+
+    .description {
+        grid-column: span 2;
+        position: relative;
+        padding-left: 3rem;
+    }
+
+    .city {
+        line-height: 1.25rem;
+        font-size: 1rem;
+        margin: 0;
+        color:  rgb(107 114 128);
+    }
+
+    .city a {
+        color: rgb(99, 102, 241);
+        text-decoration: none;
+    }
+
+    @media screen and (min-width: 636px) {
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3,minmax(0,1fr));
+            gap: 2rem;
+        }
+
+        .duration {
+            padding-left: 0;
+        }
+    }
+</style>
