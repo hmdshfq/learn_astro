@@ -1,46 +1,40 @@
 ---
-import VerticalLine from "../VerticalLine.astro";
-
+import InfoCard from "../InformationCard.astro";
+const informations = [
+    {
+        dates : "June 2023 - current",
+        positionAndCompany : "Frontend dev @ CodeYourPath (online mentorship)",
+        place : "CodeYourPath", 
+        link : "https://codeyourpath.com",
+        responsibilities : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam in corrupti vitae, ab accusantium distinctio mollitia iste magnam doloremque sed aperiam, eveniet alias repellendus officiis dolor consectetur provident. Repellendus, fuga."
+    },
+    {
+        dates : "September 2011 - June 2015",
+        positionAndCompany : "Computer Science @ Avans (bachelor)",
+        place : "'s-Hertogenbosch | Minor: Multimedia", 
+        link : "",
+        responsibilities : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam in corrupti vitae, ab accusantium distinctio mollitia iste magnam doloremque sed aperiam, eveniet alias repellendus officiis dolor consectetur provident. Repellendus, fuga."
+    },
+    {
+        dates : "September 2008 - may 2011",
+        positionAndCompany : "Havo @ Rodenborch (havo)",
+        place : "Rosmalen", 
+        link : "",
+        responsibilities : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam in corrupti vitae, ab accusantium distinctio mollitia iste magnam doloremque sed aperiam, eveniet alias repellendus officiis dolor consectetur provident. Repellendus, fuga."
+    }
+]
 ---
+
 <section id="education">
     <h1>Education</h1>
-    <div class="container">
-        <div class="duration">
-            June 2023 - current
-        </div>
-        <div class="description">
-            <VerticalLine />
-            <h3>Frontend dev @ CodeYourPath (online mentorship)</h3>
-            <p class="city">CodeYourPath |
-                <span><a href="https://codeyourpath.com" target="_blank">https://codeyourpath.com</a></span>
-            </p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam in corrupti vitae, ab accusantium distinctio mollitia iste magnam doloremque sed aperiam, eveniet alias repellendus officiis dolor consectetur provident. Repellendus, fuga.</p>
-        </div>
-    </div>
-    <div class="container">
-        <div class="duration">
-            September 2011 - June 2015
-        </div>
-        <div class="description">
-            <VerticalLine />
-            <h3>Computer Science @ Avans (bachelor)</h3>
-            <p class="city">'s-Hertogenbosch | Minor: Multimedia
-                <span><a href="" target="_blank"></a></span>
-            </p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam in corrupti vitae, ab accusantium distinctio mollitia iste magnam doloremque sed aperiam, eveniet alias repellendus officiis dolor consectetur provident. Repellendus, fuga.</p>
-        </div>
-    </div>
-    <div class="container">
-        <div class="duration">
-            September 2008 - may 2011
-        </div>
-        <div class="description">
-            <VerticalLine />
-            <h3>Havo @ Rodenborch (havo)</h3>
-            <p class="city">Rosmalen 
-                <span><a href="" target="_blank"></a></span>
-            </p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam in corrupti vitae, ab accusantium distinctio mollitia iste magnam doloremque sed aperiam, eveniet alias repellendus officiis dolor consectetur provident. Repellendus, fuga.</p>
-        </div>
-    </div>
+    {informations.map((e) => {
+        // console.log(e);
+        <InfoCard 
+            dates = {e.dates};
+            positionAndCompany = {e.positionAndCompany};
+            place = {e.place};
+            link = {e.link};
+            responsibilities = {e.responsibilities};
+        />
+    })}
 </section>

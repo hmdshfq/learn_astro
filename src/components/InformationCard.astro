@@ -1,0 +1,64 @@
+---
+import VerticalLine from "./VerticalLine.astro";
+const cardData = Astro.props;
+// console.log(cardData);
+---
+
+<div class="container">
+    <div class="dates">
+        {cardData.dates}
+    </div>
+    <div class="description">
+        <VerticalLine />
+        <h3>{cardData.positionAndCompany}</h3>
+        <p class="place"> {cardData.place} |
+            <span><a href={cardData.link} target="_blank">{cardData.link}</a></span>
+        </p>
+        <p> {cardData.responsibilities}</p>
+    </div>
+</div>
+
+<style>
+    .container {
+        display: grid;
+        margin-bottom: 4rem;
+    }
+
+    .dates {
+        line-height: 2;
+        text-align: right;
+        text-transform: uppercase;
+        padding-left: 3rem;
+        color: rgb(107 114 128);
+    }
+
+    .description {
+        grid-column: span 2;
+        position: relative;
+        padding-left: 3rem;
+    }
+
+    .place {
+        line-height: 1.25rem;
+        font-size: 1rem;
+        margin: 0;
+        color:  rgb(107 114 128);
+    }
+
+    .place a {
+        color: rgb(99, 102, 241);
+        text-decoration: none;
+    }
+
+    @media screen and (min-width: 636px) {
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3,minmax(0,1fr));
+            gap: 2rem;
+        }
+        
+        .dates {
+            padding-left: 0;
+        }
+    }
+</style>
