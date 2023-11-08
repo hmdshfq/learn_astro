@@ -1,3 +1,4 @@
+//Open/close hamburger menu
 document.querySelector('.hamburger').addEventListener('click', () => {
     document.querySelector('.mobile-menu').classList.toggle('expanded');
 })
@@ -15,12 +16,6 @@ window.addEventListener('click', function (e) {
 
 // Hide menu if clicked on the link
 let mobileMenuElements = document.querySelectorAll('.menu-button');
-
-// for (var i = 0; i < mobileMenuElements.length; i++) {
-//     mobileMenuElements[i].addEventListener('click', () =>
-//         document.querySelector('.mobile-menu').classList.remove('expanded')
-//     )
-// }
 
 mobileMenuElements.forEach( (element) => {
     element.addEventListener('click', () => {
@@ -50,6 +45,7 @@ $(window).on('scroll', function () {
     });
 });
 
+//Smooth scrolling page when clicked on menu button
 nav.find('a').on('click', function () {
     var $el = $(this)
     var id = $el.attr('href');

@@ -1,6 +1,5 @@
 ---
-// let delay = Astro.props;
-// console.log(delay);
+const { delay } = Astro.props;
 ---
 
 <div class="text-animation-container">
@@ -8,8 +7,8 @@
     <div class="text-animation"></div>
 </div>
 
-<style>    
-    .text-animation-container {
+<style define:vars={{delay}}>
+     .text-animation-container {
         position: relative;
         height: 100%;
         margin-bottom: 2rem;
@@ -25,7 +24,7 @@
         animation-duration: 2s;
         animation-timing-function: linear;
         animation-fill-mode: forwards;
-        /* animation-delay: {delay}; */
+        animation-delay: var(--delay);
     }
 
     html.dark .text-animation {
