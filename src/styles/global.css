@@ -111,19 +111,6 @@ nav {
   background-color: #000000;
 }
 
-.mobile-menu {
-  display: none;
-  position: fixed;
-  top: 4rem;
-  z-index: 10;
-  background-color: rgb(226, 226, 226);
-  width: 100%;
-}
-
-.expanded {
-  display: unset;
-}
-
 /* Dark/Light mode */
 html.dark {
   background-color: #100d3a;
