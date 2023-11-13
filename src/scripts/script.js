@@ -1,12 +1,7 @@
 $(document).ready(function () {
 
-    $('#add-button').click(function () {
-        $('.must-jump').toggleClass('jump-animation');
-    });
-
-
     var inview = new Waypoint.Inview({
-        element: $('.demo'),
+        element: $('.jump-when-visible'),
         enter: function (direction) {
             // $('.jump-when-visible').addClass('jump-animation');
             if(direction === "up") {

@@ -2,9 +2,6 @@
 import Header from "../components/Header.astro";
 import MobileNavMenu from "../components/menu/MobileNavMenu.astro";
 import "../styles/global.css";
-// import "../scripts/jquery-3.7.1";
-// import "../scripts/jquery.waypoints";
-// import "../scripts/jquery.waypoints.inview";
 
 const pageTitle = "Pavel Paliakou";
 ---
@@ -23,10 +20,8 @@ const pageTitle = "Pavel Paliakou";
 			  integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
 			  crossorigin="anonymous">
         </script>
-        <!-- <script src="../scripts/jquery-3.7.1"></script>
-        <script src="../scripts/jquery.waypoints"></script>
-        <script src="../scripts/jquery.waypoints.inview"></script>
-        <script src="../scripts/script.js"></script> -->
+        <script is:inline src="/jquery.waypoints.js"></script>
+        <script is:inline src="/jquery.waypoints.inview.js"></script>
         <title>{pageTitle}</title>
     </head>
     <body>
@@ -39,12 +34,8 @@ const pageTitle = "Pavel Paliakou";
         </main>
 
         <script>
-            // import "../scripts/jquery-3.7.1";
-            // import "../scripts/jquery.waypoints";
-            // import "../scripts/jquery.waypoints.adapter";
-            // import "../scripts/jquery.waypoints.inview";
             import "../scripts/menu.js";
-            // import "../scripts/script.js";
+            import "../scripts/script.js";
         </script>
 
     </body>

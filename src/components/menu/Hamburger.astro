@@ -1,7 +1,32 @@
 ---
+
 ---
+
 <div class="hamburger">
   <span class="line"></span>
   <span class="line"></span>
   <span class="line"></span>
 </div>
+
+<style>
+  .hamburger {
+    cursor: pointer;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  .line {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: #000000;
+  }
+
+  @media screen and (min-width: 636px) {
+    .hamburger {
+      display: none;
+    }
+  }
+</style>

@@ -1,23 +1,39 @@
 ---
 import Hamburger from "./menu/Hamburger.astro";
 import Navigation from "./menu/Navigation.astro";
-import ThemeIcon from './menu/ThemeIcon.astro';
+import ThemeIcon from "./menu/ThemeIcon.astro";
 ---
+
 <header>
-    <nav id="menu">
-        <div class="logo">
-            <a href="/">Site Logo</a>
-        </div> 
-        <div class="desktop-menu">
-            <Navigation />
-        </div>               
-        <Hamburger />
-        <ThemeIcon />
-    </nav>
+  <nav id="menu">
+    <div class="logo">
+      <a href="/">Site Logo</a>
+    </div>
+    <div class="desktop-menu">
+      <Navigation />
+    </div>
+    <Hamburger />
+    <ThemeIcon />
+  </nav>
 </header>
 
-
 <style>
+  nav {
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    z-index: 50;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2.5rem;
+    background-color: rgb(226, 226, 226);
+  }
+
+  html.dark nav {
+    background-color: #3a385b;
+  }
+
   .logo {
     flex-shrink: 0;
   }
@@ -27,5 +43,15 @@ import ThemeIcon from './menu/ThemeIcon.astro';
 
   html.dark .logo a {
     color: white;
+  }
+
+  .desktop-menu {
+    display: none;
+  }
+
+  @media screen and (min-width: 636px) {
+    .desktop-menu {
+      display: block;
+    }
   }
 </style>
