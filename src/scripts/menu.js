@@ -23,7 +23,9 @@ mobileMenuElements.forEach( (element) => {
     })
 })
 
-//Active
+//JQuery
+
+//Active link in menu
 var sections = $('section')
 var nav = $('nav')
 var nav_height = nav.outerHeight();
@@ -47,13 +49,10 @@ $(window).on('scroll', function () {
 
 //Smooth scrolling page when clicked on menu button
 nav.find('a').on('click', function () {
-    var $el = $(this)
+    var $el = $(this);
     var id = $el.attr('href');
 
-    $('html, body').animate({
-        scrollTop: $(id).offset().top - nav_height
-    }, 
-    500);
+    $('html, body').animate({scrollTop: $(id).offset().top - nav_height}, 500);
 
     return false;
 });

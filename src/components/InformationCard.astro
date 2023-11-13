@@ -1,7 +1,7 @@
 ---
 import VerticalLine from "./VerticalLine.astro";
 const cardData = Astro.props;
-// console.log(cardData);
+console.log(cardData);
 ---
 
 <div class="container">
@@ -11,7 +11,7 @@ const cardData = Astro.props;
     <div class="description">
         <VerticalLine />
         <h3>{cardData.positionAndCompany}</h3>
-        <p class="place"> {cardData.place} |
+        <p class="place"> {cardData.place}
             <span><a href={cardData.link} target="_blank">{cardData.link}</a></span>
         </p>
         <p> {cardData.responsibilities}</p>

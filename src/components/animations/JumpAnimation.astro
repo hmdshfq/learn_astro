@@ -2,34 +2,45 @@
 
 ---
 
-<div class="jump-animation">
+<div class="jump-animation-up">
     <slot/>
 </div>
 
 
 <style>
-    .jump-animation {
-        animation-name: jump;
+    .jump-animation-up {
+        animation-name: jump-up;
         animation-duration: 0.5s;
-        animation-timing-function: linear;
         animation-fill-mode: forwards;
     }
 
-    @keyframes jump {
+    .jump-animation-down {
+        animation-name: jump-down;
+        animation-duration: 0.5s;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes jump-up {
         0% {
             transform: translateY(0%);
         }
         50% {
-            transform: translateY(10%);
+            transform: translateY(-200%);
         }
         100% {
             transform: translateY(0%);
         }
-        /* from{
+        }
+
+    @keyframes jump-down {
+        0% {
             transform: translateY(0%);
         }
-        to {
-            transform: translateY(40px);
-        } */
-    }
+        50% {
+            transform: translateY(200%);
+        }
+        100% {
+            transform: translateY(0%);
+        }
+        }
 </style>
