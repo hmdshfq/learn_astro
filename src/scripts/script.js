@@ -3,13 +3,12 @@ $(document).ready(function () {
     var inview = new Waypoint.Inview({
         element: $('.jump-when-visible'),
         enter: function (direction) {
-            // $('.jump-when-visible').addClass('jump-animation');
             if(direction === "up") {
                 $('.jump-when-visible').addClass('jump-animation-up');
             } else {
                 $('.jump-when-visible').addClass('jump-animation-down');
             }
-            console.log("enter function direction: " + direction);
+            // console.log("enter function direction: " + direction);
         },
         entered: function (direction) {
         },

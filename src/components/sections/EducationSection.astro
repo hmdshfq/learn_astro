@@ -1,36 +1,13 @@
 ---
 import InfoCard from "../InformationCard.astro";
-import VerticalLine from "../VerticalLine.astro";
+import {educationInfo} from "../data/data.js";
 
-const informations = [
-    {
-        dates : "June 2023 - current",
-        positionAndCompany : "Frontend dev @ CodeYourPath (online mentorship)",
-        place : "CodeYourPath | ", 
-        link : "https://codeyourpath.com",
-        responsibilities : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam in corrupti vitae, ab accusantium distinctio mollitia iste magnam doloremque sed aperiam, eveniet alias repellendus officiis dolor consectetur provident. Repellendus, fuga."
-    },
-    {
-        dates : "September 2011 - June 2015",
-        positionAndCompany : "Computer Science @ Avans (bachelor)",
-        place : "'s-Hertogenbosch | Minor: Multimedia", 
-        link : "",
-        responsibilities : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam in corrupti vitae, ab accusantium distinctio mollitia iste magnam doloremque sed aperiam, eveniet alias repellendus officiis dolor consectetur provident. Repellendus, fuga."
-    },
-    {
-        dates : "September 2008 - may 2011",
-        positionAndCompany : "Havo @ Rodenborch (havo)",
-        place : "Rosmalen", 
-        link : "",
-        responsibilities : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam in corrupti vitae, ab accusantium distinctio mollitia iste magnam doloremque sed aperiam, eveniet alias repellendus officiis dolor consectetur provident. Repellendus, fuga."
-    }
-]
+const informations = educationInfo;
 ---
 
 <section id="education">
     <h1>Education</h1>
     {informations.map((element) => 
-        // console.log(e);
         <InfoCard 
             dates = {element.dates}
             positionAndCompany = {element.positionAndCompany}
