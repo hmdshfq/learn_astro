@@ -9,9 +9,7 @@ import ThemeIcon from "./menu/ThemeIcon.astro";
     <div class="logo">
       <a href="/">Site Logo</a>
     </div>
-    <div class="desktop-menu">
-      <Navigation />
-    </div>
+    <Navigation />
     <Hamburger />
     <ThemeIcon />
   </nav>
@@ -43,15 +41,5 @@ import ThemeIcon from "./menu/ThemeIcon.astro";
 
   html.dark .logo a {
     color: white;
-  }
-
-  .desktop-menu {
-    display: none;
-  }
-
-  @media screen and (min-width: 636px) {
-    .desktop-menu {
-      display: block;
-    }
   }
 </style>

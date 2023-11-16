@@ -17,11 +17,38 @@
     justify-content: space-evenly;
   }
 
-  .line {
+  #hamburger {
+    display: none;
+    position: relative;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .hamburger.active {
+    transform: rotate(45deg);
+  }
+
+  .hamburger .line {
     display: block;
     width: 30px;
     height: 3px;
+    transition: transform 0.3s ease-in-out;
     background-color: #000000;
+  }
+
+  .hamburger.active .line {
+    width: 35px;
+  }
+
+  .hamburger.active .line:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .line:nth-child(1) {
+    transform: translateY(12px);
+  }
+
+  .hamburger.active .line:nth-child(3) {
+    transform: translateY(-10px) rotate(90deg);
   }
 
   @media screen and (min-width: 636px) {

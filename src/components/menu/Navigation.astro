@@ -1,5 +1,7 @@
 ---
+
 ---
+
 <ul class="nav-links">
     <li><a class="menu-button" href="#about">About</a></li>
     <li><a class="menu-button" href="#work">Work</a></li>
@@ -10,9 +12,25 @@
 
 <style>
     .nav-links {
+        display: none;
         margin: 0;
         padding: 0;
         list-style: none;
+    }
+
+    .nav-links.active {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        background:  hsl(0, 0%, 89% / 0.30);
+        backdrop-filter: blur(12px);
     }
 
     .nav-links a {
@@ -26,9 +44,9 @@
         color: black;
     }
 
-        .nav-links a:hover,
-        .nav-links a:focus,
-        .nav-links a.active {
+    .nav-links a:hover,
+    .nav-links a:focus,
+    .nav-links a.active {
         background-color: #000000;
         color: white;
     }
@@ -40,8 +58,7 @@
     @media screen and (min-width: 636px) {
         .nav-links {
             display: flex;
-            gap: 20px; 
-            background: none;
+            gap: 20px;
         }
     }
 </style>
