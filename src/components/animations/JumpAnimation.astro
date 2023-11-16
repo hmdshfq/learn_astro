@@ -3,20 +3,19 @@
 ---
 
 <div class="jump-when-visible">
-    <slot/>
+    <slot />
 </div>
-
 
 <style>
     .jump-animation-up {
         animation-name: jump-up;
-        animation-duration: 0.5s;
+        animation-duration: 1s;
         animation-fill-mode: forwards;
     }
 
     .jump-animation-down {
         animation-name: jump-down;
-        animation-duration: 0.5s;
+        animation-duration: 1s;
         animation-fill-mode: forwards;
     }
 
@@ -24,23 +23,35 @@
         0% {
             transform: translateY(0%);
         }
+        25% {
+            transform: translateY(-50%);
+        }
         50% {
-            transform: translateY(-200%);
+            transform: translateY(0%);
+        }
+        75% {
+            transform: translateY(-25%);
         }
         100% {
             transform: translateY(0%);
         }
-        }
+    }
 
     @keyframes jump-down {
         0% {
             transform: translateY(0%);
         }
+        25% {
+            transform: translateY(50%);
+        }
         50% {
-            transform: translateY(200%);
+            transform: translateY(0%);
+        }
+        75% {
+            transform: translateY(25%);
         }
         100% {
             transform: translateY(0%);
         }
-        }
+    }
 </style>
