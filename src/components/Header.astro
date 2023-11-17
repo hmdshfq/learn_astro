@@ -25,21 +25,22 @@ import ThemeIcon from "./menu/ThemeIcon.astro";
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2.5rem;
-    background-color: rgb(226, 226, 226);
+    /* background-color: rgb(226, 226, 226); */
+    backdrop-filter: blur(12px);
   }
 
-  html.dark nav {
+  /* html.dark nav {
     background-color: #3a385b;
-  }
+  } */
 
   .logo {
     flex-shrink: 0;
   }
   .logo a {
-    color: black;
+    color: var(--text-light-mode);
   }
 
   html.dark .logo a {
-    color: white;
+    color: var(--text-dark-mode);
   }
 </style>

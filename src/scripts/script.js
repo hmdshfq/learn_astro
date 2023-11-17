@@ -6,7 +6,6 @@ window.addEventListener(
     (event) => {
 
         jumpElements = document.querySelectorAll('.jump-when-visible');
-        console.log(jumpElements);
 
         createJumpObserver();
     },
@@ -43,10 +42,8 @@ let callback = (entries) => {
             if (ratio < 1) {
                 if (boundingRect.top < intersectionRect.top) {
                     entry.target.classList.add('jump-animation-up');
-                    console.log("on the top");
                 } else {
                     entry.target.classList.add('jump-animation-down');
-                    console.log("on the bottom");
                 }
             }
         } else {

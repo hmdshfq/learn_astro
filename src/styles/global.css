@@ -1,14 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Merriweather:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
-/* :root {
-  --bg-color:hsl(0, 0%, 100%);
-  
-  --secton-white: hsl(0, 0%, 100%);
-  --section-gray: hsl(0, 0%, 79%);
+/*
+Navigation.astro - .nav-links a.active - background color - need var!
+ContactSection.astro - colors for inputs - need var!
+Header.astro - nav blur or background-color?
+InformationCard.astro - need var?
+Resume.astro - need var for button?
+VerticalLine.astro - need var?
+*/
 
-  --text-light-mode: hsl(0, 0%, 0%);
-  --text-dark-mode: hsl(0, 100%, 100%);
+:root {
+  --system-font: 'Ubuntu', sans-serif;
+
+  --media-min-width: 636px;
+  --nav-height: 72px;
+
+  --bg-color-light-mode: hsl(0, 0%, 100%);
+  --bg-color-dark-mode: hsl(244, 63%, 14%);
   
+  --text-light-mode: hsl(0, 0%, 0%);
+  --text-dark-mode: hsl(0, 0%, 100%);
+
+  --secton-white: hsl(0, 0%, 100%);
+  --section-gray: hsl(0, 0%, 80%);
+
+  --black: hsl(0, 0%, 0%);
+  --white: hsl(0, 0%, 100%);
+
   --primary-100: hsl(217, 100%, 100%);
   --primary-200: hsl(217, 100%, 90%);
   --primary-300: hsl(217, 100%, 80%);
@@ -18,11 +36,43 @@
   --primary-700: hsl(217, 100%, 40%);
   --primary-800: hsl(217, 100%, 30%);
   --primary-900: hsl(217, 100%, 20%);
-} */
+
+
+
+
+  /* --light-alpha-70: hsl(130 50% 99% / 0.70);
+  --light-alpha-95: hsl(130 50% 99% / 0.95);
+  --gray-900-alpha-75: hsl(130 10% 90% / 0.75);
+  --bg-color: hsl(130, 60%, 99%);
+  --gray-100: hsl(130, 10%, 10%);
+  --gray-300: hsl(130, 10%, 30%);
+  --gray-500: hsl(130, 10%, 50%);
+  --gray-700: hsl(130, 10%, 70%);
+  --gray-900: hsl(130, 10%, 90%);
+  --primary-100: hsl(130, 49%, 30%);
+  --primary-300: hsl(130, 49%, 40%);
+  --primary-500: hsl(130, 49%, 42%);
+  --primary-700: hsl(130, 49%, 60%);
+  --primary-900: hsl(130, 49%, 70%);
+  --shadow-color: 130deg 9% 58%;
+  --shadow-elevation-low: 0.7px 0.6px 1px hsl(var(--shadow-color) / 0.57), 2.8px 2.7px 4.4px -2.5px hsl(var(--shadow-color) / 0.57);
+  --shadow-elevation-medium: 0.7px 0.6px 1px hsl(var(--shadow-color) / 0.53), 3.6px 3.5px 5.6px -1.2px hsl(var(--shadow-color) / 0.53), 13.9px 13.5px 21.8px -2.5px hsl(var(--shadow-color) / 0.53);
+  --shadow-elevation-high: 0.7px 0.6px 1px hsl(var(--shadow-color) / 0.49), 5.6px 5.4px 8.8px -0.5px hsl(var(--shadow-color) / 0.49), 11.8px 11.5px 18.5px -1px hsl(var(--shadow-color) / 0.49), 22.7px 22.1px 35.6px -1.5px hsl(var(--shadow-color) / 0.49), 41.9px 40.8px 65.8px -2px hsl(var(--shadow-color) / 0.49), 72.7px 70.9px 114.2px -2.5px hsl(var(--shadow-color) / 0.49);
+  --light-weight: 300;
+  --regular: 400;
+  --bold: 600;
+  --black: 700;
+  --hover-up: 0.1s ease-out;
+  --hover-down: 0.6s ease-in;
+  --slide-in: 0.1s ease-out;
+  --slide-out: 0.3s ease-in;
+  --gap: 20px;
+  --border-radius: 5px; */
+}
 
 
 html {
-  font-family: 'Ubuntu', sans-serif;
+  font-family: var(--system-font);
 }
 
 * {
@@ -78,6 +128,6 @@ section {
 
 /* Dark/Light mode */
 html.dark {
-  background-color: #100d3a;
-  color: #fff;
+  background-color: var(--bg-color-dark-mode);
+  color: var(--text-dark-mode);
 }
