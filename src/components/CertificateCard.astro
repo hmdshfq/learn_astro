@@ -1,0 +1,17 @@
+---
+import ImageZoomAnimation from "./animations/ImageZoomAnimation.astro";
+const certificateImg = [
+    {link: "/001.jpeg", alt: "picture1"}, 
+    {link: "/002.jpg", name:  "picture2"}, 
+    {link: "/003.jpg", name: "picture3"}, 
+]
+---
+
+<div class="certificate-container">
+    {certificateImg.map( (element) => 
+        <ImageZoomAnimation 
+            link={element.link}
+            alt={element.alt}
+        />
+    )};
+</div>

@@ -39,13 +39,13 @@ let callback = (entries) => {
         // otherwise removes `jump-animation-up/down` class
 
         if (entry.isIntersecting) {
-            if (ratio < 1) {
+            // if (ratio < 1) {
                 if (boundingRect.top < intersectionRect.top) {
                     entry.target.classList.add('jump-animation-up');
                 } else {
                     entry.target.classList.add('jump-animation-down');
                 }
-            }
+            // }
         } else {
             entry.target.classList.remove('jump-animation-up');
             entry.target.classList.remove('jump-animation-down');
