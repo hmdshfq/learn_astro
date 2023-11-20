@@ -1,11 +1,11 @@
 ---
-import Hamburger from "./menu/Hamburger.astro";
-import Navigation from "./menu/Navigation.astro";
-import ThemeIcon from "./menu/ThemeIcon.astro";
+import Hamburger from './menu/Hamburger.astro';
+import Navigation from './menu/Navigation.astro';
+import ThemeIcon from './menu/ThemeIcon.astro';
 ---
 
 <header>
-    <a class="logo" href="/">Site Logo</a>
+    <a class='logo' href='/'>Site Logo</a>
     <nav>
         <Navigation />
         <Hamburger />
@@ -24,9 +24,7 @@ import ThemeIcon from "./menu/ThemeIcon.astro";
         justify-content: space-between;
         align-items: center;
         padding: 1rem 2.5rem;
-
-        /* background-color: var(--menu-light-mode); */
-        backdrop-filter: blur(12px);
+        background-color: hsla(0, 0%, 89%, 0.95);
     }
 
     nav {
@@ -46,5 +44,12 @@ import ThemeIcon from "./menu/ThemeIcon.astro";
 
     :global(.dark) .logo {
         color: var(--text-dark-mode);
+    }
+
+    @media (min-width: 636px) {
+        header {
+            background-color: transparent;
+            backdrop-filter: blur(12px);
+        }
     }
 </style>
