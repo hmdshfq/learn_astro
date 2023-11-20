@@ -2,7 +2,6 @@
 const imageData = Astro.props;
 ---
 
-
 <div class="certificate-container">
     <img class="small-image" src={imageData.link} alt={imageData.alt} />
 
@@ -21,9 +20,7 @@ const imageData = Astro.props;
 <style>
     .small-image {
         border-radius: var(--border-radius);
-        cursor: zoom-in;
-        transition: 0.3s;
-        
+
         /* For flex layout */
         /* max-width: 300px;
         height: auto;*/
@@ -93,21 +90,11 @@ const imageData = Astro.props;
         }
     }
 
-
     /* Show text when image is hover */
     .certificate-container {
-        position: relative;
         line-height: 0;
-
-        transform: scale(0.98);
-        transition: transform var(--hover-down), box-shadow var(--hover-down);
+        position: relative;
         box-shadow: var(--shadow-elevation-medium);
-    }
-
-    .certificate-container:hover {
-        transform: scale(1);
-        transition: transform var(--hover-up), box-shadow var(--hover-up);
-        box-shadow: var(--shadow-elevation-high);
     }
 
     .overlay {
@@ -119,8 +106,7 @@ const imageData = Astro.props;
         opacity: 0;
         cursor: pointer;
         border-radius: var(--border-radius);
-        /* transition: 0.5s ease; */
-        transition: all var(--hover-down);
+        transition: 0.5s ease;
         backdrop-filter: blur(12px);
     }
 
@@ -132,3 +118,27 @@ const imageData = Astro.props;
         color: var(--text-dark-mode);
     }
 </style>
+
+<script>
+    const bigImgContainer = document.getElementsByClassName("big-image-container");
+    const bigImg = document.getElementsByClassName("big-image");
+    const overlay = document.getElementsByClassName("overlay");
+
+    for (let i = 0; i < overlay.length; i++) {
+        overlay[i].addEventListener("click", function (){
+            bigImgContainer[i].classList.add("active");
+        });
+
+        bigImgContainer[i].addEventListener("click",function () {
+            closeAnimation();
+        });
+
+        function closeAnimation() {
+            bigImg[i].classList.add("zoom-out");
+            setTimeout(function () {
+                bigImgContainer[i].classList.remove("active");
+                bigImg[i].classList.remove("zoom-out");
+            }, 300);
+        }
+    }
+</script>

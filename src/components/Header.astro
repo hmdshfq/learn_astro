@@ -5,42 +5,46 @@ import ThemeIcon from "./menu/ThemeIcon.astro";
 ---
 
 <header>
-  <nav>
-    <div class="logo">
-      <a href="/">Site Logo</a>
-    </div>
-    <Navigation />
-    <Hamburger />
+    <a class="logo" href="/">Site Logo</a>
+    <nav>
+        <Navigation />
+        <Hamburger />
+    </nav>
     <ThemeIcon />
-  </nav>
 </header>
 
 <style>
-  nav {
-    position: fixed;
-    width: 100%;
-    top: 0px;
-    z-index: 10;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2.5rem;
-    background-color: rgb(226, 226, 226);
-    /* backdrop-filter: blur(12px); */
-  }
+    /* TODO: If use blur - need another style for menu liks */
+    header {
+        position: fixed;
+        width: 100%;
+        top: 0px;
+        z-index: 10;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2.5rem;
 
-  html.dark nav {
-    background-color: #3a385b;
-  }
+        /* background-color: var(--menu-light-mode); */
+        backdrop-filter: blur(12px);
+    }
 
-  .logo {
-    flex-shrink: 0;
-  }
-  .logo a {
-    color: var(--text-light-mode);
-  }
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 
-  html.dark .logo a {
-    color: var(--text-dark-mode);
-  }
+    html.dark header {
+        background-color: var(--menu-dark-mode);
+    }
+
+    .logo {
+        flex-shrink: 0;
+        color: var(--text-light-mode);
+    }
+
+    :global(.dark) .logo {
+        color: var(--text-dark-mode);
+    }
 </style>

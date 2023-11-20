@@ -49,7 +49,7 @@ const cardData = Astro.props;
         text-decoration: none;
     }
 
-    @media screen and (min-width: 636px) {
+    @media screen and (min-width: var(--media-min-width)) {
         .container {
             display: grid;
             grid-template-columns: repeat(3,minmax(0,1fr));
