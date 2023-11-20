@@ -98,6 +98,16 @@ const imageData = Astro.props;
     .certificate-container {
         position: relative;
         line-height: 0;
+
+        transform: scale(0.98);
+        transition: transform var(--hover-down), box-shadow var(--hover-down);
+        box-shadow: var(--shadow-elevation-medium);
+    }
+
+    .certificate-container:hover {
+        transform: scale(1);
+        transition: transform var(--hover-up), box-shadow var(--hover-up);
+        box-shadow: var(--shadow-elevation-high);
     }
 
     .overlay {
@@ -109,7 +119,8 @@ const imageData = Astro.props;
         opacity: 0;
         cursor: pointer;
         border-radius: var(--border-radius);
-        transition: 0.5s ease;
+        /* transition: 0.5s ease; */
+        transition: all var(--hover-down);
         backdrop-filter: blur(12px);
     }
 
