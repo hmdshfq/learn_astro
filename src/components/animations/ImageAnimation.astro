@@ -1,0 +1,123 @@
+---
+const imageData = Astro.props;
+---
+
+
+<div class="certificate-container">
+    <img class="small-image" src={imageData.link} alt={imageData.alt} />
+
+    <!-- Zoom-in image when clicked -->
+    <div class="big-image-container">
+        <img class="big-image" src={imageData.link} alt={imageData.alt} />
+    </div>
+
+    <!-- TODO: multi-line text doesn't work -->
+    <!-- Show text when image is hover -->
+    <div class="overlay">
+        <p class="text">{imageData.description}</p>
+    </div>
+</div>
+
+<style>
+    .small-image {
+        border-radius: var(--border-radius);
+        cursor: zoom-in;
+        transition: 0.3s;
+        
+        /* For flex layout */
+        /* max-width: 300px;
+        height: auto;*/
+
+        /* For grid layout */
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* Zoom-in image when clicked */
+    .big-image-container {
+        display: none;
+    }
+
+    .big-image-container.active {
+        display: flex;
+        position: fixed;
+        z-index: 20;
+        bottom: 0;
+        left: 0;
+        top: 0;
+        width: 100%;
+        cursor: pointer;
+        overflow: auto;
+
+        background-color: rgba(0, 0, 0, 0.9);
+        /* Blur instead of bg+opacity?
+        backdrop-filter: blur(12px); */
+    }
+
+    .big-image {
+        margin: auto;
+        display: block;
+        width: 80%;
+        animation-name: zoom-in;
+        animation-duration: 0.3s;
+    }
+
+    .zoom-out {
+        animation-name: zoom-out;
+        animation-duration: 0.3s;
+    }
+
+    @keyframes zoom-in {
+        from {
+            transform: scale(0.1);
+        }
+        to {
+            transform: scale(1);
+        }
+    }
+
+    @keyframes zoom-out {
+        from {
+            transform: scale(1);
+        }
+        to {
+            transform: scale(0.1);
+        }
+    }
+
+    /* 100% Image Width on Smaller Screens */
+    @media only screen and (max-width: 700px) {
+        .big-image {
+            width: 100%;
+        }
+    }
+
+
+    /* Show text when image is hover */
+    .certificate-container {
+        position: relative;
+        line-height: 0;
+    }
+
+    .overlay {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        cursor: pointer;
+        border-radius: var(--border-radius);
+        transition: 0.5s ease;
+        backdrop-filter: blur(12px);
+    }
+
+    .certificate-container:hover .overlay {
+        opacity: 1;
+    }
+
+    .text {
+        color: var(--text-dark-mode);
+    }
+</style>

@@ -18,7 +18,7 @@ import {skills} from "./data/data.js";
     .skills {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
+        justify-content: center;
         width: 100%;
     }
 
@@ -29,13 +29,12 @@ import {skills} from "./data/data.js";
         height: 4.375rem;
         margin: 1rem;
         padding: 0.5rem 1rem;
-        border-radius: 0.5rem;
-        background-color: var(--bg-color-light-mode);
+        border-radius: var(--border-radius);
         cursor: pointer;
     }
 
     img {
-        width: 3rem;
+        max-width: 3rem;
     }
 
     .skills p {
@@ -45,5 +44,6 @@ import {skills} from "./data/data.js";
 
     html.dark .skill-container {
         color: var(--text-light-mode);
+        background-color: var(--bg-color-light-mode);
     }
 </style>

@@ -1,18 +1,24 @@
-const img = document.getElementsByClassName("toZoom");
-const modal = document.getElementsByClassName("modal");
-const modalContainer = document.getElementsByClassName("modal-content");
-const span = document.getElementsByClassName("close");
+const bigImgContainer = document.getElementsByClassName("big-image-container");
+const bigImg = document.getElementsByClassName("big-image");
+const overlay = document.getElementsByClassName("overlay");
 
-for (let i = 0; i < img.length; i++) {
-    img[i].onclick = function () {
-        modal[i].classList.add("active");
+for (let i = 0; i < overlay.length; i++) {
+    overlay[i].onclick = function () {
+        bigImgContainer[i].classList.add("active");
+        // bigImg[i].src = this.src;
+        // bigImg[i].alt = this.alt;
+        // bigImgContainer.style.animationName="zoom-in";
     };
 
-    span[i].onclick = function () {
-        modal[i].classList.remove("active");
-    };
+    bigImgContainer[i].onclick = function () {
+        closeAnimation();
+    }
 
-    modalContainer[i].onclick = function () {
-        modal[i].classList.remove("active");
+    function closeAnimation() {
+        bigImg[i].classList.add("zoom-out")
+        setTimeout(function() {
+            bigImgContainer[i].classList.remove("active");
+            bigImg[i].classList.remove("zoom-out");
+        }, 300);
     }
 }
