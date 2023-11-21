@@ -27,11 +27,11 @@
     width: 30px;
     height: 3px;
     transition: transform 0.3s ease-in-out;
-    background-color: var(--text-light-mode);
+    background-color: var(--light-color);
   }
 
   :global(.dark) .line {
-    background-color: var(--text-dark-mode);
+    background-color: var(--dark-color);
   }
 
   .hamburger.active .line {
@@ -50,7 +50,7 @@
     transform: translateY(-10px) rotate(90deg);
   }
 
-  @media screen and (min-width: 636px) {
+  @media screen and (min-width: 700px) {
     .hamburger {
       display: none;
     }

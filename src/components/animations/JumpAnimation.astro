@@ -55,3 +55,49 @@
         }
     }
 </style>
+
+<script>
+    let jumpElements;
+
+    window.addEventListener(
+        "load",
+        (event) => {
+            jumpElements = document.querySelectorAll(".jump-when-visible");
+
+            createJumpObserver();
+        },
+        false,
+    );
+
+    function createJumpObserver() {
+        let options = {
+            root: null,
+            rootMargin: "0px",
+            threshold: 0.7,
+        };
+
+        let observer = new IntersectionObserver(callback, options);
+
+        jumpElements.forEach((element) => {
+            observer.observe(element);
+        });
+    }
+
+    let callback = (entries) => {
+        entries.forEach((entry) => {
+            const boundingRect = entry.boundingClientRect;
+            const intersectionRect = entry.intersectionRect;
+
+            if (entry.isIntersecting) {
+                if (boundingRect.top < intersectionRect.top) {
+                    entry.target.classList.add("jump-animation-up");
+                } else {
+                    entry.target.classList.add("jump-animation-down");
+                }
+            } else {
+                entry.target.classList.remove("jump-animation-up");
+                entry.target.classList.remove("jump-animation-down");
+            }
+        });
+    };
+</script>

@@ -14,7 +14,6 @@ import ThemeIcon from './menu/ThemeIcon.astro';
 </header>
 
 <style>
-    /* TODO: If use blur - need another style for menu liks */
     header {
         position: fixed;
         width: 100%;
@@ -39,14 +38,14 @@ import ThemeIcon from './menu/ThemeIcon.astro';
 
     .logo {
         flex-shrink: 0;
-        color: var(--text-light-mode);
+        color: var(--light-color);
     }
 
     :global(.dark) .logo {
-        color: var(--text-dark-mode);
+        color: var(--dark-color);
     }
 
-    @media (min-width: 636px) {
+    @media (min-width: 700px) {
         header {
             background-color: transparent;
             backdrop-filter: blur(12px);

@@ -45,20 +45,20 @@
         font-size: 1rem;
         font-weight: 500;
         padding: 0.5rem 0.75rem;
-        color: var(--text-light-mode);
+        color: var(--light-color);
     }
 
     .nav-links a:hover,
     .nav-links a.active {
         background-color: #000000;
-        color: var(--text-dark-mode);
+        color: var(--dark-color);
     }
 
     :global(.dark) .nav-links a {
-        color: var(--text-dark-mode);
+        color: var(--dark-color);
     }
 
-    @media screen and (min-width: 636px) {
+    @media screen and (min-width: 700px) {
         .nav-links {
             display: flex;
             gap: 20px;

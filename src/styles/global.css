@@ -4,7 +4,6 @@
 TODO
 Navigation.astro - .nav-links a.active - background color - need var!
 ContactSection.astro - colors for inputs - need var!
-Header.astro - nav blur or background-color?
 InformationCard.astro - need var?
 Resume.astro - need var for button?
 VerticalLine.astro - need var?
@@ -14,17 +13,18 @@ ImageZoomAnimation.astro - need var?
 :root {
   --system-font: 'Ubuntu', sans-serif;
 
-  --media-min-width: 636px;
+  --media-min-width: 700px;
   --nav-height: 72px;
 
-  --bg-color-light-mode: hsl(0, 0%, 100%);
-  --bg-color-dark-mode: hsl(244, 63%, 14%);
-
+  --light-bg: hsl(0, 0%, 100%);
+  --light-color: hsl(0, 0%, 0%);
   --menu-light-mode: hsl(0, 0%, 89%);
+  
+  --dark-bg: hsl(244, 63%, 14%);
+  --dark-color: hsl(0, 0%, 100%);
   --menu-dark-mode: hsl(243, 24%, 29%);
+  
 
-  --text-light-mode: hsl(0, 0%, 0%);
-  --text-dark-mode: hsl(0, 0%, 100%);
 
   --secton-white: hsl(0, 0%, 100%);
   --section-gray: hsl(0, 0%, 90%);
@@ -123,6 +123,6 @@ section {
 
 /* Dark/Light mode */
 html.dark {
-  background-color: var(--bg-color-dark-mode);
-  color: var(--text-dark-mode);
+  background-color: var(--dark-bg);
+  color: var(--dark-color);
 }

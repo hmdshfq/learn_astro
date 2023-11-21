@@ -2,36 +2,19 @@
 const imageData = Astro.props;
 ---
 
-<div class="certificate-container">
-    <img class="small-image" src={imageData.link} alt={imageData.alt} />
-
-    <!-- Zoom-in image when clicked -->
-    <div class="big-image-container">
-        <img class="big-image" src={imageData.link} alt={imageData.alt} />
-    </div>
-
-    <!-- TODO: multi-line text doesn't work -->
-    <!-- Show text when image is hover -->
-    <div class="overlay">
-        <p class="text">{imageData.description}</p>
-    </div>
+<img class="small-image" src={imageData.link} alt={imageData.alt} />
+<div class="big-image-container">
+    <img class="big-image" src={imageData.link} alt={imageData.alt} />
 </div>
 
 <style>
     .small-image {
         border-radius: var(--border-radius);
-
-        /* For flex layout */
-        /* max-width: 300px;
-        height: auto;*/
-
-        /* For grid layout */
         width: 100%;
         height: 100%;
         object-fit: cover;
     }
 
-    /* Zoom-in image when clicked */
     .big-image-container {
         display: none;
     }
@@ -48,7 +31,8 @@ const imageData = Astro.props;
         overflow: auto;
 
         background-color: rgba(0, 0, 0, 0.9);
-        /* Blur instead of bg+opacity?
+        /* TODO
+        Blur instead of bg+opacity?
         backdrop-filter: blur(12px); */
     }
 
@@ -89,43 +73,15 @@ const imageData = Astro.props;
             width: 100%;
         }
     }
-
-    /* Show text when image is hover */
-    .certificate-container {
-        line-height: 0;
-        position: relative;
-        box-shadow: var(--shadow-elevation-medium);
-    }
-
-    .overlay {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: absolute;
-        inset: 0;
-        opacity: 0;
-        cursor: pointer;
-        border-radius: var(--border-radius);
-        transition: 0.5s ease;
-        backdrop-filter: blur(12px);
-    }
-
-    .certificate-container:hover .overlay {
-        opacity: 1;
-    }
-
-    .text {
-        color: var(--text-dark-mode);
-    }
 </style>
 
 <script>
     const bigImgContainer = document.getElementsByClassName("big-image-container");
     const bigImg = document.getElementsByClassName("big-image");
-    const overlay = document.getElementsByClassName("overlay");
+    const smallImg = document.getElementsByClassName("small-image");
 
-    for (let i = 0; i < overlay.length; i++) {
-        overlay[i].addEventListener("click", function (){
+    for (let i = 0; i < smallImg.length; i++) {
+        smallImg[i].closest("div").addEventListener("click", function (){
             bigImgContainer[i].classList.add("active");
         });
 

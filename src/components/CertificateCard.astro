@@ -1,38 +1,50 @@
 ---
 import ImageZoomAnimation from "./animations/ImageAnimation.astro";
-
-const certificateImg = [
-    { link: "/001.jpeg", alt: "picture1", description: "Udemi docker&kubernetis certificate" },
-    { link: "/002.jpg", alt: "picture2", description: "Udemi docker&kubernetis certificate" },
-    { link: "/003.jpg", alt: "picture3", description: "Udemi docker&kubernetis certificates Udemi docker&kubernetis certificate" },
-];
+import {certificateData} from "./data/data.js";
 ---
 
 <div class="certificates">
-    {
-        certificateImg.map((element) => (
-            <ImageZoomAnimation 
-                link={element.link} 
-                alt={element.alt} 
-                description={element.description}
-            />
-        ))
-    }
+    {certificateData.map((certificate) => (
+        <div class="certificate-container">
+            <ImageZoomAnimation link={certificate.link} alt={certificate.alt}/>
+            <div class="overlay">
+                <span class="text">{certificate.description}</span>
+            </div>
+        </div>
+    ))}
 </div>
+
 <style>
     .certificates {
         width: 100%; 
-
-        /* Flex layout */
-        /*display: flex;
-        align-items: center;
-        justify-content: space-around;
-        flex-wrap: wrap;
-        gap: 1rem;*/
-
-        /* Grid layout for better responsive */
         display: grid;
         grid-gap: 1rem;
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+    }
+
+    .certificate-container {
+        position: relative;
+    }
+
+    .overlay {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        cursor: pointer;
+        border-radius: var(--border-radius);
+        transition: 0.5s ease;
+        backdrop-filter: blur(12px);
+    }
+
+    .certificate-container:hover .overlay {
+        opacity: 1;
+    }
+
+    .text {
+        color: var(--dark-color);
+        text-align: center;
     }
 </style>
