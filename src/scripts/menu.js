@@ -1,18 +1,36 @@
+//Hamburge menu
+const hamburger = document.querySelector(".hamburger");
+const navLinks = document.querySelector('.nav-links');
+
 // Open/close hamburger menu
-document.querySelector('.hamburger').addEventListener('click', () => {
-    document.querySelector('.hamburger').classList.toggle('expanded');
-    document.querySelector('.nav-links').classList.toggle('expanded');
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('expanded');
+    navLinks.classList.toggle('expanded');
 })
 
-// Hide menu if clicked on the link
-let menuElements = document.querySelectorAll('.menu-button');
+// Hide hamburger menu if clicked on the link
+const menuButtons = document.querySelectorAll('.menu-button');
 
-menuElements.forEach( (element) => {
-    element.addEventListener('click', () => {
-        document.querySelector('.hamburger').classList.remove('expanded');
-        document.querySelector('.nav-links').classList.remove('expanded');
+menuButtons.forEach((e) => {
+    e.addEventListener('click', () => {
+        hamburger.classList.remove('expanded');
+        navLinks.classList.remove('expanded');
     })
 })
+
+// Hide hamburger menu if screen size more than min-width
+const mediaMinWidth = window.matchMedia("(min-width: 700px)")
+
+function myFunction(mediaMinWidth) {
+    //if (x <= 700) than {hide haburger menu} else {....}
+    if (mediaMinWidth.matches) {
+        hamburger.classList.remove('expanded');
+        navLinks.classList.remove('expanded');
+    }
+}
+
+myFunction(mediaMinWidth) // Call listener function at run time
+mediaMinWidth.addListener(myFunction) // Attach listener function on state changes 
 
 // JQuery
 
@@ -43,7 +61,7 @@ nav.find('a').on('click', function () {
     var $el = $(this);
     var id = $el.attr('href');
 
-    $('html, body').animate({scrollTop: $(id).offset().top - header_height}, 500);
+    $('html, body').animate({ scrollTop: $(id).offset().top - header_height }, 500);
 
     return false;
 });

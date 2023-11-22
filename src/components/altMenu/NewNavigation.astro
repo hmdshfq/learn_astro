@@ -1,0 +1,76 @@
+---
+
+---
+
+<ul class="nav-links">
+    <li><a class="menu-button" href="#about">About</a></li>
+    <li><a class="menu-button" href="#work">Work</a></li>
+    <li><a class="menu-button" href="#education">Education</a></li>
+    <li><a class="menu-button" href="#projects">Projtcts</a></li>
+    <li><a class="menu-button" href="#contact">Contact</a></li>
+</ul>
+
+<style>
+    .nav-links {
+        display: none;
+        gap: 1.25rem;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .nav-links.expanded {
+        position: fixed;
+        top: var(--nav-height);
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--light-alfa);
+        backdrop-filter: blur(1rem);
+    }
+    
+    :global(.dark) .nav-links.expanded {
+        background-color: var(--dark-alfa);
+    }
+    
+    .nav-links a {
+        display: block;
+        text-align: center;
+        border-radius: var(--border-radius);
+        text-decoration: none;
+        font-size: 1rem;
+        font-weight: 500;
+        padding: 0.5rem 0.75rem;
+        color: var(--light-color);
+    }
+
+    :global(.dark) .nav-links a {
+        color: var(--dark-color);
+    }
+
+    .nav-links.expanded a {
+        font-size: 2rem;
+        font-weight: 600;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+        background-color: var(--primary-400);
+        color: var(--dark-color);
+    }
+
+    :global(.dark) .nav-links a:hover,
+    :global(.dark) .nav-links a.active {
+        background-color: var(--primary-700);
+    }
+
+    @media screen and (min-width: 700px) {
+        .nav-links {
+            display: flex;
+        }
+    }
+</style>

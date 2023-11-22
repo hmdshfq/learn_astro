@@ -2,7 +2,6 @@
 
 /*
 TODO
-Navigation.astro - .nav-links a.active - background color - need var!
 ContactSection.astro - colors for inputs - need var!
 InformationCard.astro - need var?
 Resume.astro - need var for button?
@@ -12,18 +11,20 @@ ImageZoomAnimation.astro - need var?
 
 :root {
   --system-font: 'Ubuntu', sans-serif;
-
+  
   --media-min-width: 700px;
   --nav-height: 72px;
-
+  
   --light-bg: hsl(0, 0%, 100%);
   --light-color: hsl(0, 0%, 0%);
-  --element-light-mode: hsl(0, 0%, 90%);
+  --light-bg-element: hsl(0, 0%, 90%);
+  --light-alfa: hsl(0 0% 100% / 0.70);
   
   --dark-bg: hsl(0, 0%, 10%);
   --dark-color: hsl(0, 0%, 100%);
-  --element-dark-mode: hsl(0, 0%, 20%);
-
+  --dark-bg-element: hsl(0, 0%, 20%);
+  --dark-alfa: hsl(0 0% 10% / 0.70);
+  
   --secton-white: hsl(0, 0%, 100%);
   --section-gray: hsl(0, 0%, 95%);
 

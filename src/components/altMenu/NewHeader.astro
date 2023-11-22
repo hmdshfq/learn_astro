@@ -1,7 +1,7 @@
 ---
-import Hamburger from './menu/Hamburger.astro';
-import Navigation from './menu/Navigation.astro';
-import ThemeIcon from './menu/ThemeIcon.astro';
+import Hamburger from '../menu/Hamburger.astro';
+import Navigation from './NewNavigation.astro';
+import ThemeIcon from '../menu/ThemeIcon.astro';
 ---
 
 <header>
@@ -24,6 +24,7 @@ import ThemeIcon from './menu/ThemeIcon.astro';
         align-items: center;
         padding: 1rem 2.5rem;
         background-color: var(--light-bg-element);
+        box-shadow: var(--shadow-low);
     }
 
     nav {
@@ -43,12 +44,5 @@ import ThemeIcon from './menu/ThemeIcon.astro';
 
     :global(.dark) .logo {
         color: var(--dark-color);
-    }
-
-    @media screen and (min-width: 700px) {
-        header {
-            /* background-color: transparent;
-            backdrop-filter: blur(12px); */
-        }
     }
 </style>
