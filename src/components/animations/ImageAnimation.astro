@@ -29,11 +29,8 @@ const imageData = Astro.props;
         width: 100%;
         cursor: pointer;
         overflow: auto;
-
-        background-color: rgba(0, 0, 0, 0.9);
-        /* TODO
-        Blur instead of bg+opacity?
-        backdrop-filter: blur(12px); */
+        background-color: var(--dark-alfa);
+        backdrop-filter: blur(12px);
     }
 
     .big-image {

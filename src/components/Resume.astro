@@ -12,12 +12,20 @@ const resumeLink = "../../../public/EnglishCertificate_ PavelPaliakou.pdf"
         padding: 0.5rem 2rem;
         margin-bottom: 2rem;
         border-radius: var(--border-radius);
-        background-color: rgb(99, 102, 241);
+        background-color: var(--primary-400);
         color: var(--dark-color);
         cursor: pointer;
     }
 
+    :global(.dark) .resume {
+        background-color: var(--primary-700);
+    }
+
     .resume:hover {
-        background-color: rgb(125, 127, 255);
+        background-color: var(--primary-600);
+    }
+
+    :global(.dark) .resume:hover {
+        background-color: var(--primary-600);
     }
 </style>

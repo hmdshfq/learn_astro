@@ -86,8 +86,8 @@ import Footer from "../Footer.astro";
         border-width: 1px;
         border-radius: var(--border-radius);
         color: var(--dark-color);
-        background-color: rgb(55, 65, 81);
-        border-color: rgb(75, 85, 99);
+        background-color: var(--input-bg);
+        border-color: var(--input-border-color);
     }
 
     textarea {
@@ -101,8 +101,13 @@ import Footer from "../Footer.astro";
         padding: 0.625rem;
         border-width: 1px;
         border-radius: var(--border-radius);
-        background-color: rgb(55, 65, 81);
-        border-color: rgb(75, 85, 99);
+        background-color: var(--input-bg);
+        border-color: var(--input-border-color);
+    }
+    
+    textarea::placeholder,
+    input::placeholder {
+        font-size: 1rem;
     }
 
     .send {
@@ -113,7 +118,7 @@ import Footer from "../Footer.astro";
 
     .send a{
         text-decoration: none;
-        color: rgb(99, 102, 241);
+        color: var(--primary-600);
     }
 
     button {
@@ -123,12 +128,20 @@ import Footer from "../Footer.astro";
         font-size: 1rem;
         cursor: pointer;
         border: none;
-        background-color: rgb(99, 102, 241);
+        background-color: var(--primary-400);
         color: var(--dark-color);
     }
     
+    :global(.dark) button {
+        background-color: var(--primary-700);
+    }
+
     button:hover{
-        background-color: rgb(125, 127, 255);
+        background-color: var(--primary-300);
+    }
+
+    :global(.dark) button:hover{
+        background-color: var(--primary-600);
     }
 
     .contact-data {
@@ -142,7 +155,7 @@ import Footer from "../Footer.astro";
     .contact-data a {
         font-weight: 600;
         text-decoration: none;
-        color: rgb(99, 102, 241);
+        color: var(--primary-600);
     }
 
     @media screen and (min-width: 700px) {
