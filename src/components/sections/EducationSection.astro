@@ -1,19 +1,24 @@
 ---
 import InfoCard from "../InformationCard.astro";
-import {educationInfo} from "../data/data.js";
+import CertificateCard from "../CertificateCard.astro";
+import { educationInfo } from "../data/data.js";
 
 const informations = educationInfo;
 ---
 
 <section id="education">
     <h1>Education</h1>
-    {informations.map((element) => 
-        <InfoCard 
-            dates = {element.dates}
-            positionAndCompany = {element.positionAndCompany}
-            place = {element.place}
-            link = {element.link}
-            responsibilities = {element.responsibilities}
-        />
-    )}
+    {
+        informations.map((element) => (
+            <InfoCard
+                dates={element.dates}
+                positionAndCompany={element.positionAndCompany}
+                place={element.place}
+                link={element.link}
+                responsibilities={element.responsibilities}
+            />
+        ))
+    }
+    <h2>Certificates</h2>
+    <CertificateCard />
 </section>

@@ -23,7 +23,7 @@ import ThemeIcon from './menu/ThemeIcon.astro';
         justify-content: space-between;
         align-items: center;
         padding: 1rem 2.5rem;
-        background-color: hsla(0, 0%, 89%, 0.95);
+        background-color: var(--element-light-mode);
     }
 
     nav {
@@ -32,8 +32,8 @@ import ThemeIcon from './menu/ThemeIcon.astro';
         align-items: center;
     }
 
-    html.dark header {
-        background-color: var(--menu-dark-mode);
+    :global(.dark) header {
+        background-color: var(--element-dark-mode);
     }
 
     .logo {
@@ -47,8 +47,8 @@ import ThemeIcon from './menu/ThemeIcon.astro';
 
     @media (min-width: 700px) {
         header {
-            background-color: transparent;
-            backdrop-filter: blur(12px);
+            /* background-color: transparent;
+            backdrop-filter: blur(12px); */
         }
     }
 </style>

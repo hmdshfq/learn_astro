@@ -70,9 +70,8 @@ export const educationInfo = [
 
 //CertificateCard.astro
 export const certificateData = [
-    { link: "/001.jpeg", alt: "picture1", description: "Udemi docker&kubernetis certificate" },
-    { link: "/002.jpg", alt: "picture2", description: "Udemi docker&kubernetis certificate" },
-    { link: "/003.jpg", alt: "picture3", description: "Udemi docker&kubernetis certificates Udemi docker&kubernetis certificate" },
+    { link: "/English_cert.jpg", alt: "image of english certificate", description: "English Business Course" },
+    { link: "/Udemi_docker_cert.jpg", alt: "image of docker and kubernetes certificate", description: "Docker & Kubernetes: The Complete Practical Guide" }
 ]
 
 //Social.astro

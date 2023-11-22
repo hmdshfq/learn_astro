@@ -27,7 +27,7 @@ const { delay } = Astro.props;
         animation-delay: var(--delay);
     }
 
-    html.dark .text-animation {
+    :global(.dark) .text-animation {
         background-color: var(--dark-bg);
     }
 

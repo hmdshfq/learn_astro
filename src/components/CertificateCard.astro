@@ -18,12 +18,16 @@ import {certificateData} from "./data/data.js";
     .certificates {
         width: 100%; 
         display: grid;
-        grid-gap: 1rem;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+        grid-gap: 2rem;
+        grid-template-columns: repeat(auto-fill, minmax(500px, 1fr)); 
     }
 
     .certificate-container {
         position: relative;
+        margin-top: 2rem;
+        width: 100%;
+        height: 300px;
+        box-shadow: var(--shadow-low);
     }
 
     .overlay {
@@ -36,7 +40,7 @@ import {certificateData} from "./data/data.js";
         cursor: pointer;
         border-radius: var(--border-radius);
         transition: 0.5s ease;
-        backdrop-filter: blur(12px);
+        backdrop-filter: blur(20px);
     }
 
     .certificate-container:hover .overlay {
@@ -44,7 +48,10 @@ import {certificateData} from "./data/data.js";
     }
 
     .text {
-        color: var(--dark-color);
+        font-size: 2rem;
+        font-weight: 600;
         text-align: center;
+        padding: 0.5rem;
+        color: var(--light-color);
     }
 </style>
