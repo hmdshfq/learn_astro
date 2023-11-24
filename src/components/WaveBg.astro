@@ -1,16 +1,16 @@
 ---
-
 ---
 
 <div class="wave-container">
     <svg viewBox="0 0 500 100">
-        <path d="M 0,30 C 133,130 350,30 500,40 L 500,0 L 0,0"></path>
+        <path d="M 0,30 C 133,130 350,30 500,30 L 500,0 L 0,0"></path>
     </svg>
 </div>
 
 <style>
     .wave-container {
         position: relative;
+        width: 100%;
     }
 
     svg {
@@ -20,7 +20,7 @@
         width: 100%;
         z-index: -1;
         fill: var(--light-bg);
-        background-color: var(--gray-200);
+        background-color: var(--gray-100);
     }
 
     :global(.dark) svg{

@@ -6,61 +6,71 @@ import EmailForm from "../EmailForm.astro";
 <section id="contact">
     <h1>Contact</h1>
 
-    <div>
+    <div class="contact-message">
         <h2>Contact with me</h2>
         <p>
-            If you want to know more about me or my work, send me a message. 
-            <br>
-            I'd love to hear from you.
+            If you want to know more about me or my work, send me a message.
+            <br />
+             I'd love to hear from you.
         </p>
     </div>
 
     <div class="contact-container">
+        <EmailForm />
 
-        <EmailForm/>
-        
-        <div class="contact-data">
-            <h2>Email</h2>
-            <a href="#contact">email</a>
-            <h2>Address</h2>
-            <a href="#contact">Poland</a>
-            <h2>Social</h2>
-            <Social />
+        <div class="contact-info">
+            <div class="info-container">
+                <h2>Email</h2>
+                <a href="mailto:contact@yourdomain.com">pavel.paliakou0010@gmail.com</a>
+            </div>
+            <div class="info-container">
+                <h2>Address</h2>
+                <a href="#contact">Poland</a>
+            </div>
+            <div class="info-container">
+                <h2>Social</h2>
+                <Social />
+            </div>
         </div>
     </div>
-    
 </section>
 
 <style>
-
     #contact {
-        position: relative;
         padding-bottom: 0;
     }
 
-    #contact h2{
+    #contact h2 {
         text-align: left;
     }
 
-    div {
-       width: 100%; 
+    .contact-message {
+        width: 100%;
     }
 
     .contact-container {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        width: 100%;
     }
 
-    .contact-data {
+    .contact-info {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         width: 100%;
-        gap: 1rem;
+        gap: 0;
     }
 
-    .contact-data a {
+    .info-container {
+        display: flex;
+        flex-direction: column;
+        align-items: unset;
+        width: auto;
+    }
+
+    .info-container a {
         font-weight: 600;
         text-decoration: none;
         color: var(--primary-600);
@@ -71,7 +81,12 @@ import EmailForm from "../EmailForm.astro";
             flex-direction: row;
         }
 
-        .contact-data {
+        .contact-info {
+            align-items: flex-end;
+            gap: 3rem;
+        }
+
+        .info-container {
             align-items: flex-end;
         }
     }

@@ -9,13 +9,35 @@ import ContactSection from '../components/sections/ContactSection.astro';
 
 <BaseLayout>
 
-	<AboutSection />
+	<div class="about">
+		<AboutSection />
+	</div>
 
-	<WorkSection />
+	<div class="expirience">
+		<WorkSection />
+	</div>
 
-	<EducationSection />
+	<div class="education">
+		<EducationSection />
+	</div>
 
-	<Projects />
+	<div class="projects">
+		<Projects />
+	</div>
 
-	<ContactSection />
+	<div class="contacts">
+		<ContactSection />
+	</div>
 </BaseLayout>
+
+<style>
+	.expirience,
+	.projects {
+		background-color: var(--light-bg-element);
+	}
+
+	:global(.dark) .expirience,
+	:global(.dark) .projects {
+		background-color: var(--gray-900);
+	}
+</style>

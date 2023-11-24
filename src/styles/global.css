@@ -11,16 +11,13 @@
   --light-bg-element: hsl(0, 0%, 95%);
   --light-alfa: hsl(0 0% 100% / 0.7);
   
-  --dark-bg: hsl(0, 0%, 10%);
+  --dark-bg: hsl(0, 0%, 5%);
   --dark-color: hsl(0, 0%, 100%);
   --dark-bg-element: hsl(0, 0%, 20%);
   --dark-alfa: hsl(0 0% 10% / 0.7);
 
-  --input-bg: hsl(217, 19%, 27%);
-  --input-border-color: hsl(215, 14%, 34%);
-  
-  --secton-white: hsl(0, 0%, 100%);
-  --section-gray: hsl(0, 0%, 95%);
+  --input-bg: hsl(0, 0%, 30%);
+  --input-border-color: hsl(0, 0%, 40%);
 
   --primary-50: hsl(220, 100%, 95%);
   --primary-100: hsl(220, 100%, 90%);
