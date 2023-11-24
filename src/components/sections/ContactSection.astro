@@ -1,6 +1,6 @@
 ---
 import Social from "../Social.astro";
-import Footer from "../Footer.astro";
+import EmailForm from "../EmailForm.astro";
 ---
 
 <section id="contact">
@@ -16,26 +16,8 @@ import Footer from "../Footer.astro";
     </div>
 
     <div class="contact-container">
-        <div>
-            <form action="mailto:contact@yourdomain.com" method="post" enctype="text/plain">
-                <div class="name">
-                    <label for="name">Name</label>
-                    <input id="name" type="text" placeholder="Enter your name" required="">
-                </div>
-                <div class="email">
-                    <label for="email">Email</label>
-                    <input id="email" type="email" placeholder="Enter your email" required="">
-                </div>
-                <div class="message">
-                    <label for="message">Message</label>
-                    <textarea id="message" placeholder="Enter your message" required=""></textarea>
-                </div>
-                <div class="send">
-                    <a href="mailto:contact@yourdomain.com">Send email directly</a>
-                    <button type="submit">Send</button>
-                </div>
-            </form>
-        </div>
+
+        <EmailForm/>
         
         <div class="contact-data">
             <h2>Email</h2>
@@ -46,102 +28,28 @@ import Footer from "../Footer.astro";
             <Social />
         </div>
     </div>
-
-    <Footer />
+    
 </section>
 
 <style>
 
     #contact {
+        position: relative;
         padding-bottom: 0;
+    }
+
+    #contact h2{
+        text-align: left;
     }
 
     div {
        width: 100%; 
     }
 
-    form div {
-        margin-top: 1.5rem;
-        margin-bottom: 1.5rem;
-    }
-
     .contact-container {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-    }
-
-    label {
-        display: block;
-        font-size: 1.125rem;
-        font-weight: 500;
-        line-height: 1.75rem;
-        margin-bottom: 0.5rem;
-    }
-
-    input {
-        display: block;
-        width: 100%;
-        padding: 0.625rem;
-        border-width: 1px;
-        border-radius: var(--border-radius);
-        color: var(--dark-color);
-        background-color: var(--input-bg);
-        border-color: var(--input-border-color);
-    }
-
-    textarea {
-        display: block;
-        height: 7rem;
-        width: 100%;
-        resize: vertical;
-        font-size: 0.875rem;
-        line-height: 1.25rem;
-        color: var(--dark-color);
-        padding: 0.625rem;
-        border-width: 1px;
-        border-radius: var(--border-radius);
-        background-color: var(--input-bg);
-        border-color: var(--input-border-color);
-    }
-    
-    textarea::placeholder,
-    input::placeholder {
-        font-size: 1rem;
-    }
-
-    .send {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .send a{
-        text-decoration: none;
-        color: var(--primary-600);
-    }
-
-    button {
-        width: 10rem;
-        padding: 0.5rem 1rem;
-        border-radius: var(--border-radius);
-        font-size: 1rem;
-        cursor: pointer;
-        border: none;
-        background-color: var(--primary-400);
-        color: var(--dark-color);
-    }
-    
-    :global(.dark) button {
-        background-color: var(--primary-700);
-    }
-
-    button:hover{
-        background-color: var(--primary-300);
-    }
-
-    :global(.dark) button:hover{
-        background-color: var(--primary-600);
     }
 
     .contact-data {

@@ -10,10 +10,14 @@ const cardData = Astro.props;
     <div class="description">
         <VerticalLine />
         <h3>{cardData.positionAndCompany}</h3>
-        <p class="place"> {cardData.place}
-            <span><a href={cardData.link} target="_blank">{cardData.link}</a></span>
+        <p class="place">
+            {cardData.place}
+            <span
+                ><a href={cardData.link} target="_blank">{cardData.link}</a
+                ></span
+            >
         </p>
-        <p> {cardData.responsibilities}</p>
+        <p>{cardData.responsibilities}</p>
     </div>
 </div>
 
@@ -21,43 +25,47 @@ const cardData = Astro.props;
     .container {
         display: grid;
         margin-bottom: 4rem;
+        place-items: center;
     }
 
     .dates {
-        line-height: 2;
-        text-align: right;
+        text-align: center;
         text-transform: uppercase;
-        padding-left: 3rem;
-        color: rgb(107 114 128);
+        color: var(--gray-500);
     }
 
     .description {
-        grid-column: span 2;
+        grid-column: unset;
         position: relative;
         padding-left: 3rem;
     }
 
     .place {
         line-height: 1.25rem;
-        font-size: 1rem;
+        font-size: 1.25rem;
         margin: 0;
-        color:  rgb(107 114 128);
+        color: var(--gray-500);
     }
 
     .place a {
-        color: rgb(99, 102, 241);
+        color: var(--primary-400);
         text-decoration: none;
     }
 
     @media screen and (min-width: 700px) {
         .container {
             display: grid;
-            grid-template-columns: repeat(3,minmax(0,1fr));
+            grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 2rem;
+            place-items: unset;
         }
-        
+
         .dates {
-            padding-left: 0;
+            text-align: right;
+        }
+
+        .description {
+            grid-column: span 2;
         }
     }
 </style>
