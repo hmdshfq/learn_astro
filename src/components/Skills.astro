@@ -1,8 +1,6 @@
 ---
 import JumpAnimation from "./animations/JumpAnimation.astro";
 import {skills} from "./data/data.js";
-
-//TODO: add fixed dimensions for picturea
 ---
 
 <div class="skills">
@@ -37,7 +35,8 @@ import {skills} from "./data/data.js";
 
     img {
         width: 3rem;
-        height: auto;
+        height: 3rem;
+        object-fit: contain;
     }
 
     .skills p {

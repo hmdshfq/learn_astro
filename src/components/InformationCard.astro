@@ -12,11 +12,11 @@ const cardInfo = Astro.props;
         <h3>{cardInfo.positionAndCompany}</h3>
         <p class="place">
             {cardInfo.place}
-            <span>
+            {cardInfo.link ? 
                 <a href={cardInfo.link} target="_blank" aria-label={cardInfo.link}>
                     {cardInfo.link}
-                </a>
-            </span>
+                </a> : ""
+            }
         </p>
         <p class="responsibilities">{cardInfo.responsibilities}</p>
     </div>
