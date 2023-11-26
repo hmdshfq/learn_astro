@@ -6,6 +6,8 @@ import WaveBg from "../components/WaveBg.astro";
 import "../styles/global.css";
 
 const pageTitle = "Pavel Paliakou";
+
+//TODO: Add aria-label="" for links
 ---
 
 <html lang="en">
@@ -17,7 +19,8 @@ const pageTitle = "Pavel Paliakou";
         <link rel="manifest" href="/site.webmanifest">
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
-        <script is:inline src="/jquery-3.7.1.min.js"></script>
+        <!-- TODO: try defer - for faster load or put in src and import?-->
+        <script defer src="/jquery-3.7.1.min.js"></script>
         <title>{pageTitle}</title>
     </head>
     <body>
