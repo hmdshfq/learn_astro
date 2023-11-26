@@ -1,8 +1,11 @@
 ---
-
+//TODO insecure if put just 
+//  a action="mailto:contact@yourdomain.com"
+//  form href="mailto:contact@yourdomain.com" 
+// need to change
 ---
 
-<form action="mailto:contact@yourdomain.com" method="post" enctype="text/plain">
+<form action="" method="post" enctype="text/plain">
     <div class="name">
         <label for="name">Name</label>
         <input
@@ -10,6 +13,7 @@
             type="text"
             placeholder="Enter your name"
             required=""
+            autocomplete="name"
         />
     </div>
     <div class="email">
@@ -19,15 +23,20 @@
             type="email"
             placeholder="Enter your email"
             required=""
+            autocomplete="email"
         />
     </div>
     <div class="message">
         <label for="message">Message</label>
-        <textarea id="message" placeholder="Enter your message" required=""
+        <textarea 
+            id="message" 
+            placeholder="Enter your message" 
+            required=""
+            autocomplete="off"
         ></textarea>
     </div>
     <div class="send">
-        <a href="mailto:contact@yourdomain.com">Send email directly</a>
+        <a href="/">Send email directly</a>
         <button type="submit">Send</button>
     </div>
 </form>

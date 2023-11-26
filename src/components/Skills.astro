@@ -9,7 +9,7 @@ import {skills} from "./data/data.js";
     {skills.map((skill) => (
         <JumpAnimation>
             <div class="skill-container">
-                <img src={skill.link} />
+                <img src={skill.link} alt={skill.name}/>
                 <p>{skill.name}</p>
             </div>
         </JumpAnimation>)

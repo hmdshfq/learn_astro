@@ -1,23 +1,24 @@
 ---
 import VerticalLine from "./VerticalLine.astro";
-const cardData = Astro.props;
+const cardInfo = Astro.props;
 ---
 
 <div class="container">
     <div class="dates">
-        {cardData.dates}
+        {cardInfo.dates}
     </div>
     <div class="description">
         <VerticalLine />
-        <h3>{cardData.positionAndCompany}</h3>
+        <h3>{cardInfo.positionAndCompany}</h3>
         <p class="place">
-            {cardData.place}
-            <span
-                ><a href={cardData.link} target="_blank">{cardData.link}</a
-                ></span
-            >
+            {cardInfo.place}
+            <span>
+                <a href={cardInfo.link} target="_blank" aria-label={cardInfo.link}>
+                    {cardInfo.link}
+                </a>
+            </span>
         </p>
-        <p>{cardData.responsibilities}</p>
+        <p class="responsibilities">{cardInfo.responsibilities}</p>
     </div>
 </div>
 
@@ -25,17 +26,15 @@ const cardData = Astro.props;
     .container {
         display: grid;
         margin-bottom: 4rem;
-        place-items: center;
     }
 
     .dates {
-        text-align: center;
+        padding-left: 3rem;
         text-transform: uppercase;
         color: var(--gray-500);
     }
 
     .description {
-        grid-column: unset;
         position: relative;
         padding-left: 3rem;
     }
@@ -52,16 +51,21 @@ const cardData = Astro.props;
         text-decoration: none;
     }
 
+    .responsibilities {
+        margin-top: 1.5rem;
+    }
+
     @media screen and (min-width: 700px) {
         .container {
             display: grid;
             grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 2rem;
-            place-items: unset;
+            align-items: start;
+            justify-items: end;
         }
 
         .dates {
-            text-align: right;
+            padding-left: 0;
         }
 
         .description {
