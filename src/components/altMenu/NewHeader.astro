@@ -1,11 +1,12 @@
 ---
 import NewHamburger from './NewHamburger.astro';
 import Navigation from './NewNavigation.astro';
+import SiteLogo from "../menu/SiteLogo.astro";
 import ThemeIcon from '../menu/ThemeIcon.astro';
 ---
 
 <header>
-    <a class='logo' href='/'>Site Logo</a>
+    <SiteLogo />
     <nav>
         <Navigation />
         <NewHamburger />
@@ -26,28 +27,20 @@ import ThemeIcon from '../menu/ThemeIcon.astro';
         box-shadow: var(--shadow-menu);
     }
 
+    :global(.dark) header {
+        background-color: var(--dark-bg-element);
+    }
+
     nav {
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
 
-    :global(.dark) header {
-        background-color: var(--dark-bg-element);
-    }
-
-    .logo {
-        flex-shrink: 0;
-        color: var(--light-color);
-    }
-
-    :global(.dark) .logo {
-        color: var(--dark-color);
-    }
-
     @media screen and (min-width: 700px) {
         header {
             position: sticky;
+            justify-content: space-evenly;
         }
     }
 </style>
