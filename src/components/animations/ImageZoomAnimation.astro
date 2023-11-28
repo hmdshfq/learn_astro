@@ -1,10 +1,18 @@
 ---
-const imageData = Astro.props;
+ import { Picture } from 'astro:assets';
+
+interface Props {
+   imagePath: string;
+   altText: string;
+}
+
+const { imagePath, altText } = Astro.props;
+const images = import.meta.glob('/src/assets/images/certificate/*.{jpeg,jpg,png,gif}')
 ---
 
-<img class="small-image" src={imageData.link} alt={imageData.alt} />
+<Picture src={images[imagePath]()} formats={['avif', 'webp']} alt={altText} class="small-image"/>
 <div class="big-image-container">
-    <img class="big-image" src={imageData.link} alt={imageData.alt} />
+    <Picture src={images[imagePath]()} formats={['avif', 'webp']} alt={altText} class="big-image"/>
 </div>
 
 <style>
@@ -21,6 +29,8 @@ const imageData = Astro.props;
 
     .big-image-container.active {
         display: flex;
+        justify-content: center;
+        align-items: center;
         position: fixed;
         z-index: 20;
         bottom: 0;
@@ -34,9 +44,10 @@ const imageData = Astro.props;
     }
 
     .big-image {
-        margin: auto;
         display: block;
-        width: 60%;
+        margin: auto;
+        width: 100%;
+        height: auto;
         animation-name: zoom-in;
         animation-duration: 0.3s;
     }
@@ -61,13 +72,6 @@ const imageData = Astro.props;
         }
         to {
             transform: scale(0.1);
-        }
-    }
-
-    /* 100% Image Width on Smaller Screens */
-    @media screen and (max-width: 700px) {
-        .big-image {
-            width: 100%;
         }
     }
 </style>

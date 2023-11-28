@@ -1,22 +1,13 @@
 ---
-import ImageZoomAnimation from "./animations/ImageAnimation.astro";
 import { certificateData } from "./data/data.js";
-
-import AltImageAnimation from "./animations/AltImageAnimation.astro";
-
-const certs = [
-    { link: "/src/assets/images/certificate/English_cert.jpg", alt: "image of english certificate", description: "English Business Course" },
-    { link: "/src/assets/images/certificate/Udemi_docker_cert.jpg", alt: "image of docker and kubernetes certificate", description: "Docker & Kubernetes: The Complete Practical Guide" }
-]
+import ImageZoomAnimation from "./animations/ImageZoomAnimation.astro";
 ---
 
 <div class="certificates">
-    
-    <!-- Usint images from src  -->
     {
-        certs.map((e) => (
+        certificateData.map((e) => (
             <div class="certificate-container">
-                    <AltImageAnimation 
+                    <ImageZoomAnimation 
                         imagePath={e.link}
                         altText={e.alt}
                     />
@@ -26,21 +17,6 @@ const certs = [
             </div>
         ))
     }
-
-    <!-- Using images from public -->
-    <!-- {
-        certificateData.map((certificate) => (
-            <div class="certificate-container">
-                <ImageZoomAnimation
-                    link={certificate.link}
-                    alt={certificate.alt}
-                />
-                <div class="overlay">
-                    <span class="text">{certificate.description}</span>
-                </div>
-            </div>
-        ))
-    } -->
 </div>
 
 <style>

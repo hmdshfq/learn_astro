@@ -2,7 +2,7 @@
 const resumeLink = "../../../public/EnglishCertificate_ PavelPaliakou.pdf"
 ---
 
-<a class="resume" href={resumeLink} download>Resume</a>
+<a class="resume" href={resumeLink} aria-label="download .pdf resume" download>Resume</a>
 
 <style>
     .resume {
@@ -12,7 +12,7 @@ const resumeLink = "../../../public/EnglishCertificate_ PavelPaliakou.pdf"
         padding: 0.5rem 2rem;
         margin-bottom: 2rem;
         border-radius: var(--border-radius);
-        background-color: var(--primary-400);
+        background-color: var(--primary-600);
         color: var(--dark-color);
         cursor: pointer;
     }
@@ -22,7 +22,7 @@ const resumeLink = "../../../public/EnglishCertificate_ PavelPaliakou.pdf"
     }
 
     .resume:hover {
-        background-color: var(--primary-600);
+        background-color: var(--primary-500);
     }
 
     :global(.dark) .resume:hover {

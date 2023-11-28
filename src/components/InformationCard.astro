@@ -9,13 +9,21 @@ const cardInfo = Astro.props;
     </div>
     <div class="description">
         <VerticalLine />
-        <h3>{cardInfo.positionAndCompany}</h3>
+        <div class="position">{cardInfo.positionAndCompany}</div>
         <p class="place">
             {cardInfo.place}
-            {cardInfo.link ? 
-                <a href={cardInfo.link} target="_blank" aria-label={cardInfo.link}>
-                    {cardInfo.link}
-                </a> : ""
+            {
+                cardInfo.link ? (
+                    <a
+                        href={cardInfo.link}
+                        target="_blank"
+                        aria-label={cardInfo.link}
+                    >
+                        {cardInfo.link}
+                    </a>
+                ) : (
+                    ""
+                )
             }
         </p>
         <p class="responsibilities">{cardInfo.responsibilities}</p>
@@ -31,7 +39,11 @@ const cardInfo = Astro.props;
     .dates {
         padding-left: 3rem;
         text-transform: uppercase;
-        color: var(--gray-500);
+        color: var(--gray-600);
+    }
+
+    :global(.dark) .dates {
+        color: var(--gray-300);
     }
 
     .description {
@@ -39,16 +51,31 @@ const cardInfo = Astro.props;
         padding-left: 3rem;
     }
 
+    .position {
+        margin: 0;
+        font-weight: 700;
+        line-height: 1.75rem;
+        font-size: 1.5rem;
+    }
+
     .place {
         line-height: 1.25rem;
         font-size: 1.25rem;
         margin: 0;
-        color: var(--gray-500);
+        color: var(--gray-600);
+    }
+
+    :global(.dark) .place {
+        color: var(--gray-300);
     }
 
     .place a {
-        color: var(--primary-400);
+        color: var(--primary-600);
         text-decoration: none;
+    }
+
+    :global(.dark) .place a {
+        color: var(--primary-300);
     }
 
     .responsibilities {
