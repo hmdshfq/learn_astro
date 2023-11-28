@@ -21,7 +21,7 @@
 
     .nav-links.expanded {
         position: fixed;
-        top: var(--nav-height);
+        top: 0;
         bottom: 0;
         left: 0;
         right: 0;
@@ -59,13 +59,8 @@
 
     .nav-links a:hover,
     .nav-links a.active {
-        background-color: var(--primary-400);
+        background-color: var(--gray-600);
         color: var(--dark-color);
-    }
-
-    :global(.dark) .nav-links a:hover,
-    :global(.dark) .nav-links a.active {
-        background-color: var(--primary-700);
     }
 
     @media screen and (min-width: 700px) {

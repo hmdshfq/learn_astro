@@ -1,5 +1,5 @@
 ---
-import Hamburger from '../menu/Hamburger.astro';
+import NewHamburger from './NewHamburger.astro';
 import Navigation from './NewNavigation.astro';
 import ThemeIcon from '../menu/ThemeIcon.astro';
 ---
@@ -8,14 +8,14 @@ import ThemeIcon from '../menu/ThemeIcon.astro';
     <a class='logo' href='/'>Site Logo</a>
     <nav>
         <Navigation />
-        <Hamburger />
+        <NewHamburger />
     </nav>
     <ThemeIcon />
 </header>
 
 <style>
     header {
-        position: sticky;
+        position: relative;
         top: 0px;
         z-index: 10;
         display: flex;
@@ -43,5 +43,11 @@ import ThemeIcon from '../menu/ThemeIcon.astro';
 
     :global(.dark) .logo {
         color: var(--dark-color);
+    }
+
+    @media screen and (min-width: 700px) {
+        header {
+            position: sticky;
+        }
     }
 </style>
