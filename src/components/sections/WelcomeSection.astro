@@ -1,0 +1,66 @@
+---
+import Resume from "../Resume.astro";
+import TextAnimation from "../animations/TextAnimation.astro";
+---
+
+<section id="welcome">
+    <div class="whelcome-container">
+        <div class="whelcome-description">
+            <p>Hello, I'm Pavel</p>
+            <div class="job-title">
+                <p>Front-end developer</p>
+            </div>
+            <Resume />
+            <TextAnimation delay="0.5s">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Ipsam officia facilis aut?
+                </p>
+            </TextAnimation>
+        </div>
+        <div class="welcome-img">
+            <img src="/undraw_hello_re_3evm.svg" alt="hello" />
+        </div>
+    </div>
+</section>
+
+<style>
+    .whelcome-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        gap: 2rem;
+        height: calc(100vh - var(--nav-height));
+    }
+
+    .whelcome-description {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        flex: 1 1 0;
+    }
+
+    .job-title {
+        font-size: 2rem;
+        font-weight: 700;
+    }
+
+    .welcome-img {
+        display: none;
+        width: 100%;
+        flex: 1 1 0;
+    }
+
+    img {
+        max-width: 40rem;
+        height: auto;
+        width: 100%;
+    }
+
+    @media screen and (min-width: 700px) {
+        .welcome-img {
+            display: flex;
+        }
+    }
+</style>
