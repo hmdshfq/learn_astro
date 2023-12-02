@@ -4,8 +4,8 @@ import TextAnimation from "../animations/TextAnimation.astro";
 ---
 
 <section id="welcome">
-    <div class="whelcome-container">
-        <div class="whelcome-description">
+    <div class="welcome-container">
+        <div class="welcome-description">
             <p>Hello, I'm Pavel</p>
             <div class="job-title">
                 <p>Front-end developer</p>
@@ -25,7 +25,10 @@ import TextAnimation from "../animations/TextAnimation.astro";
 </section>
 
 <style>
-    .whelcome-container {
+    #welcome {
+        background-image: url("/");
+    }
+       .welcome-container {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -34,7 +37,7 @@ import TextAnimation from "../animations/TextAnimation.astro";
         height: calc(100vh - var(--nav-height));
     }
 
-    .whelcome-description {
+    .welcome-description {
         display: flex;
         flex-direction: column;
         align-items: start;
