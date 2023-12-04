@@ -57,7 +57,8 @@ export const educationInfo = [
 //CertificateCard.astro
 export const certificateData = [
     { link: "/src/assets/images/certificate/English_cert.jpg", alt: "english business certificate", description: "English Business Course" },
-    { link: "/src/assets/images/certificate/Udemi_docker_cert.jpg", alt: "docker and kubernetes certificate", description: "Docker & Kubernetes: The Complete Practical Guide" }
+    { link: "/src/assets/images/certificate/Udemi_docker_cert.jpg", alt: "Docker & Kubernetes: The Complete Practical Guide", description: "Docker & Kubernetes: The Complete Practical Guide" },
+    { link: "/src/assets/images/certificate/Responsive_web_design.png", alt: "Responsive web design certificate from Free Code Camp", description: "Responsive web design" }
 ]
 
 //Social.astro

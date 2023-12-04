@@ -3,32 +3,38 @@ import Resume from "../Resume.astro";
 import TextAnimation from "../animations/TextAnimation.astro";
 ---
 
-<section id="welcome">
-    <div class="welcome-container">
-        <div class="welcome-description">
-            <p>Hello, I'm Pavel</p>
-            <div class="job-title">
-                <p>Front-end developer</p>
+<div class="section-container">
+    <section id="welcome">
+        <div class="welcome-container">
+            <div class="welcome-description">
+                <p>Hello, I'm Pavel</p>
+                <div class="job-title">
+                    <p>Front-end developer</p>
+                </div>
+                <Resume />
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Ipsam officia facilis aut?
+                    </p>
             </div>
-            <Resume />
-            <TextAnimation delay="0.5s">
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Ipsam officia facilis aut?
-                </p>
-            </TextAnimation>
+            <div class="welcome-img">
+                <img src="/undraw_hello_re_3evm.svg" alt="hello" />
+            </div>
         </div>
-        <div class="welcome-img">
-            <img src="/undraw_hello_re_3evm.svg" alt="hello" />
-        </div>
-    </div>
-</section>
+    </section>
+</div>
 
 <style>
-    #welcome {
-        background-image: url("/");
+    .section-container {
+        background-image: url("/light_sky_pexels-photo.jpg");
+        background-size: cover;
     }
-       .welcome-container {
+
+    :global(.dark) .section-container {
+        background-image: url("/pexels-kai-pilger-1341279.jpg");
+    }
+
+    .welcome-container {
         display: flex;
         align-items: center;
         justify-content: center;
