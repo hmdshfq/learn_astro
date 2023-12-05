@@ -1,19 +1,23 @@
 ---
+import IDLink from "../../components/IDLink.astro";
+import WaveCoverSeparator from "../../components/WaveCoverSeparator.astro";
 ---
 
-<!-- <section id="projects"> -->
-<section>
-    <h1>Projects</h1>
-    <ul>
-        <li>Lorem ipsum dolor sit amet.</li>
-        <li>Lorem ipsum dolor sit amet.</li>
-        <li>Lorem ipsum dolor sit amet.</li>
-        <li>Lorem ipsum dolor sit amet.</li>
-    </ul>
-</section>
+<WaveCoverSeparator>
+    <IDLink id="projects" />
+    <section class="projects">
+        <h1>Projects</h1>
+        <ul>
+            <li>Lorem ipsum dolor sit amet.</li>
+            <li>Lorem ipsum dolor sit amet.</li>
+            <li>Lorem ipsum dolor sit amet.</li>
+            <li>Lorem ipsum dolor sit amet.</li>
+        </ul>
+    </section>
+</WaveCoverSeparator>
 
 <style>
-    section {
+    .projects {
         height: 100vh;
     }
 </style>

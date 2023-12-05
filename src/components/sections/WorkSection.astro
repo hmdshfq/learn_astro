@@ -1,19 +1,26 @@
 ---
 import InfoCard from "../InformationCard.astro";
-import {workInfo} from "../data/data.js";
+import IDLink from "../../components/IDLink.astro";
+import WaveCoverSeparator from "../../components/WaveCoverSeparator.astro";
+import { workInfo } from "../data/data.js";
 
-const informations = workInfo; 
+const informations = workInfo;
 ---
 
-<section>
-    <h1>Work Expirience</h1>
-    {informations.map((element) => 
-        <InfoCard 
-            dates = {element.dates}
-            positionAndCompany = {element.positionAndCompany}
-            place = {element.place}
-            link = {element.link}
-            responsibilities = {element.responsibilities}
-        />
-    )}
-</section>
+<WaveCoverSeparator>
+    <IDLink id="work" />
+    <section class="work">
+        <h1>Work Expirience</h1>
+        {
+            informations.map((element) => (
+                <InfoCard
+                    dates={element.dates}
+                    positionAndCompany={element.positionAndCompany}
+                    place={element.place}
+                    link={element.link}
+                    responsibilities={element.responsibilities}
+                />
+            ))
+        }
+    </section>
+</WaveCoverSeparator>

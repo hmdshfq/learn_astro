@@ -1,12 +1,14 @@
 ---
 import InfoCard from "../InformationCard.astro";
 import CertificateCard from "../CertificateCard.astro";
+import IDLink from "../../components/IDLink.astro";
 import { educationInfo } from "../data/data.js";
 
 const informations = educationInfo;
 ---
 
-<section>
+<IDLink id="education"/>
+<section class="education">
     <h1>Education</h1>
     {
         informations.map((element) => (

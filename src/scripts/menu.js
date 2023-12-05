@@ -35,7 +35,7 @@ mediaMinWidth.addEventListener("change" ,closeMenuIfMedia) // Attach listener fu
 
 // JQuery
 // Active link in menu
-var sections = $('section')
+var sections = $('section');
 var header_height = $('header').outerHeight();
 var nav = $('nav');
 
@@ -43,15 +43,15 @@ $(window).on('scroll', function () {
     var cur_pos = $(this).scrollTop();
 
     sections.each(function () {
-        var top = $(this).offset().top - header_height,
-            bottom = top + $(this).outerHeight();
+        var top = $(this).offset().top - header_height;
+        var bottom = top + $(this).outerHeight();
 
         if (cur_pos >= top && cur_pos <= bottom) {
             nav.find('a').removeClass('active');
             sections.removeClass('active');
 
             $(this).addClass('active');
-            nav.find('a[href="#' + $(this).attr('id') + '"]').addClass('active');
+            nav.find('a[href="#' + $(this).attr('class') + '"]').addClass('active');
         }
     });
 });

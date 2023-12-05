@@ -1,57 +1,23 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import AboutSection from '../components/sections/AboutSection.astro';
-import WorkSection from '../components/sections/WorkSection.astro';
-import EducationSection from '../components/sections/EducationSection.astro';
-import Projects from '../components/sections/ProjectSection.astro';
-import ContactSection from '../components/sections/ContactSection.astro';
-import WelcomeSection from '../components/sections/WelcomeSection.astro';
-import WaveCoverSeparator from '../components/WaveCoverSeparator.astro';
-import IDLink from "../components/IDLink.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import AboutSection from "../components/sections/AboutSection.astro";
+import WorkSection from "../components/sections/WorkSection.astro";
+import EducationSection from "../components/sections/EducationSection.astro";
+import Projects from "../components/sections/ProjectSection.astro";
+import ContactSection from "../components/sections/ContactSection.astro";
+import WelcomeSection from "../components/sections/WelcomeSection.astro";
 ---
 
 <BaseLayout>
-
 	<WelcomeSection />
 
-	<div class="about">
-		<IDLink id="about"/>
-		<AboutSection />
-	</div>
-	
-	<div class="work">
-		<IDLink id="work"/>
-		<WaveCoverSeparator>
-			<WorkSection />
-		</WaveCoverSeparator>
-	</div>
-	
-	<div class="education">
-		<IDLink id="education"/>
-		<EducationSection />
-	</div>
+	<AboutSection />
 
-	<div class="projects">
-		<IDLink id="projects"/>
-		<WaveCoverSeparator>
-			<Projects />
-		</WaveCoverSeparator>
-	</div>
+	<WorkSection />
 
-	<div class="contact">
-		<IDLink id="contact"/>
-		<ContactSection />
-	</div>
+	<EducationSection />
+
+	<Projects />
+
+	<ContactSection />
 </BaseLayout>
-
-<style>
-	.work,
-	.projects {
-		background-color: var(--light-bg-element);
-	}
-
-	:global(.dark) .work,
-	:global(.dark) .projects {
-		background-color: var(--gray-900);
-	}
-</style>

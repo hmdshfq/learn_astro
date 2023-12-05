@@ -1,9 +1,11 @@
 ---
 import Social from "../Social.astro";
 import EmailForm from "../EmailForm.astro";
+import IDLink from "../../components/IDLink.astro";
 ---
 
-<section>
+<IDLink id="contact"/>
+<section class="contact">
     <h1>Contact</h1>
 
     <div class="contact-message">
@@ -36,11 +38,11 @@ import EmailForm from "../EmailForm.astro";
 </section>
 
 <style>
-    section {
+    .contact {
         padding-bottom: 0;
     }
 
-    section h2 {
+    .contact h2 {
         text-align: left;
     }
 
