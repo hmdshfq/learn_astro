@@ -1,4 +1,4 @@
-//Hamburge menu
+//Hamburger menu
 const hamburger = document.querySelector(".hamburger");
 const navLinks = document.querySelector('.nav-links');
 
@@ -21,19 +21,19 @@ menuButtons.forEach((e) => {
 // Hide hamburger menu if screen size more than min-width
 const mediaMinWidth = window.matchMedia("(min-width: 700px)")
 
-function myFunction(mediaMinWidth) {
-    //if (x <= 700) than {hide haburger menu} else {....}
+function closeMenuIfMedia() {
+    //if (x <= 700) than {hide hamburger menu} else {....}
     if (mediaMinWidth.matches) {
         hamburger.classList.remove('expanded');
         navLinks.classList.remove('expanded');
     }
 }
 
-myFunction(mediaMinWidth) // Call listener function at run time
-mediaMinWidth.addListener(myFunction) // Attach listener function on state changes 
+closeMenuIfMedia() // Call listener function at run time
+mediaMinWidth.addEventListener("change" ,closeMenuIfMedia) // Attach listener function on state changes 
+
 
 // JQuery
-
 // Active link in menu
 var sections = $('section')
 var header_height = $('header').outerHeight();
@@ -54,14 +54,4 @@ $(window).on('scroll', function () {
             nav.find('a[href="#' + $(this).attr('id') + '"]').addClass('active');
         }
     });
-});
-
-//Smooth scrolling page when clicked on menu button
-nav.find('a').on('click', function () {
-    var $el = $(this);
-    var id = $el.attr('href');
-
-    $('html, body').animate({ scrollTop: $(id).offset().top - header_height }, 500);
-
-    return false;
 });

@@ -7,6 +7,7 @@ import Projects from '../components/sections/ProjectSection.astro';
 import ContactSection from '../components/sections/ContactSection.astro';
 import WelcomeSection from '../components/sections/WelcomeSection.astro';
 import WaveCoverSeparator from '../components/WaveCoverSeparator.astro';
+import IDLink from "../components/IDLink.astro";
 ---
 
 <BaseLayout>
@@ -14,26 +15,31 @@ import WaveCoverSeparator from '../components/WaveCoverSeparator.astro';
 	<WelcomeSection />
 
 	<div class="about">
+		<IDLink id="about"/>
 		<AboutSection />
 	</div>
 	
 	<div class="work">
+		<IDLink id="work"/>
 		<WaveCoverSeparator>
 			<WorkSection />
 		</WaveCoverSeparator>
 	</div>
 	
 	<div class="education">
+		<IDLink id="education"/>
 		<EducationSection />
 	</div>
 
 	<div class="projects">
+		<IDLink id="projects"/>
 		<WaveCoverSeparator>
 			<Projects />
 		</WaveCoverSeparator>
 	</div>
 
 	<div class="contact">
+		<IDLink id="contact"/>
 		<ContactSection />
 	</div>
 </BaseLayout>

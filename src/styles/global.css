@@ -56,6 +56,7 @@
 
 
 html {
+  scroll-behavior: smooth;
   font-family: var(--system-font);
   background-color: var(--light-bg);
 }
