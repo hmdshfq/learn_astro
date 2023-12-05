@@ -5,9 +5,8 @@ import WorkSection from '../components/sections/WorkSection.astro';
 import EducationSection from '../components/sections/EducationSection.astro';
 import Projects from '../components/sections/ProjectSection.astro';
 import ContactSection from '../components/sections/ContactSection.astro';
-import WaveSeparatorTop from '../components/WaveSeparatorTop.astro';
-import WaveSeparatorBottom from '../components/WaveSeparatorBottom.astro';
 import WelcomeSection from '../components/sections/WelcomeSection.astro';
+import WaveCoverSeparator from '../components/WaveCoverSeparator.astro';
 ---
 
 <BaseLayout>
@@ -19,9 +18,9 @@ import WelcomeSection from '../components/sections/WelcomeSection.astro';
 	</div>
 	
 	<div class="work">
-		<WaveSeparatorTop />
-		<WorkSection />
-		<WaveSeparatorBottom />
+		<WaveCoverSeparator>
+			<WorkSection />
+		</WaveCoverSeparator>
 	</div>
 	
 	<div class="education">
@@ -29,9 +28,9 @@ import WelcomeSection from '../components/sections/WelcomeSection.astro';
 	</div>
 
 	<div class="projects">
-		<WaveSeparatorTop />
-		<Projects />
-		<WaveSeparatorBottom />
+		<WaveCoverSeparator>
+			<Projects />
+		</WaveCoverSeparator>
 	</div>
 
 	<div class="contact">
