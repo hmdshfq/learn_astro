@@ -3,7 +3,7 @@ const particleObject = {
         "number": {
             "value": 6,
             "density": {
-                "enable": true,
+                "enable": false,
                 "value_area": 800
             }
         },
