@@ -1,8 +1,9 @@
 ---
+import ParticalBG from "../ParticalBG.astro";
 import Resume from "../Resume.astro";
-import TextAnimation from "../animations/TextAnimation.astro";
 ---
 
+<ParticalBG />
 <div class="section-container">
     <section id="welcome">
         <div class="welcome-container">
@@ -25,14 +26,14 @@ import TextAnimation from "../animations/TextAnimation.astro";
 </div>
 
 <style>
-    .section-container {
+    /* .section-container {
         background-image: url("/light_sky_pexels-photo.jpg");
         background-size: cover;
     }
 
     :global(.dark) .section-container {
         background-image: url("/pexels-kai-pilger-1341279.jpg");
-    }
+    } */
 
     .welcome-container {
         display: flex;
