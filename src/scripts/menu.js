@@ -1,4 +1,4 @@
-//Hamburger menu
+//Hamburger menu and buttons (links)
 const hamburger = document.querySelector(".hamburger");
 const navLinks = document.querySelector('.nav-links');
 
@@ -28,30 +28,45 @@ function closeMenuIfMedia() {
         navLinks.classList.remove('expanded');
     }
 }
+// Listener for media 
+mediaMinWidth.addEventListener("change", closeMenuIfMedia)
 
-closeMenuIfMedia() // Call listener function at run time
-mediaMinWidth.addEventListener("change" ,closeMenuIfMedia) // Attach listener function on state changes 
+//Spy-scroll (active link when it in section) Intersection Observer API
+const sections = document.querySelectorAll("section");
+let activeSectionIndicator = '';
 
+function createSectionObserver() {
+    let options = {
+        root: null,
+        rootMargin: "-10% 0px -90% 0px",
+    };
 
-// JQuery
-// Active link in menu
-var sections = $('section');
-var header_height = $('header').outerHeight();
-var nav = $('nav');
+    let observer = new IntersectionObserver(callback, options);
 
-$(window).on('scroll', function () {
-    var cur_pos = $(this).scrollTop();
+    sections.forEach((section) => {
+        observer.observe(section);
+    });
+}
 
-    sections.each(function () {
-        var top = $(this).offset().top - header_height;
-        var bottom = top + $(this).outerHeight();
+let callback = (entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            //get the class name of current section
+            activeSectionIndicator = "#" + entry.target.classList[0];
 
-        if (cur_pos >= top && cur_pos <= bottom) {
-            nav.find('a').removeClass('active');
-            sections.removeClass('active');
+            menuButtons.forEach(element => {
+                //delete .active from menu links
+                if(element.classList.contains("active")){
+                    element.classList.remove("active");
+                }
+                //add .active if href link equals to section class name
+                if (element.getAttribute("href") === activeSectionIndicator) {
+                    element.classList.add("active");
+                }
+            });
 
-            $(this).addClass('active');
-            nav.find('a[href="#' + $(this).attr('class') + '"]').addClass('active');
         }
     });
-});
+};
+
+createSectionObserver();

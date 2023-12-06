@@ -1,5 +1,5 @@
 ---
-const { delay } = Astro.props;
+
 ---
 
 <div class="text-animation-container">
@@ -7,7 +7,7 @@ const { delay } = Astro.props;
     <div class="text-animation"></div>
 </div>
 
-<style define:vars={{ delay }}>
+<style>
     .text-animation-container {
         position: relative;
         height: 100%;
@@ -20,11 +20,9 @@ const { delay } = Astro.props;
         height: 100%;
         top: 0;
         background-color: var(--light-bg);
-        animation-name: show-text;
         animation-duration: 1.5s;
         animation-timing-function: linear;
         animation-fill-mode: forwards;
-        animation-delay: var(--delay);
     }
 
     :global(.dark) .text-animation {
@@ -40,3 +38,33 @@ const { delay } = Astro.props;
         }
     }
 </style>
+
+<script>
+    let textElements;
+   
+    window.addEventListener("load", () => {
+        textElements = document.querySelectorAll(".text-animation");
+        createTextObserver();
+    });
+
+    function createTextObserver() {
+        let options = {
+            root: null,
+            rootMargin: "0px",
+        };
+
+        let observer = new IntersectionObserver(callback, options);
+
+        textElements.forEach((element) => {
+            observer.observe(element);
+        });
+    }
+
+    let callback = (entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.style.animationName = "show-text";
+            }
+        });
+    };
+</script>

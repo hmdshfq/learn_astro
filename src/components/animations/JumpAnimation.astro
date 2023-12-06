@@ -61,12 +61,10 @@
 
     window.addEventListener(
         "load",
-        (event) => {
+        () => {
             jumpElements = document.querySelectorAll(".jump-when-visible");
-
             createJumpObserver();
-        },
-        false,
+        }
     );
 
     function createJumpObserver() {
