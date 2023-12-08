@@ -22,14 +22,14 @@ export const skills = [
 export const workInfo = [
     {
         dates: "January 2018 - January 2021",
-        positionAndCompany: "Technical Support Engineer @ System Administrator LLC",
+        positionAndCompany: "System Administrator/Technical Support Engineer @ System Administrator LLC",
         place: "Minsk | ",
         link: "https://sys-admin.by",
         responsibilities: "Installing and configuring computer hardware, software, systems, networks, printers, and scanners. Troubleshooting and resolving issues with software, hardware and network. Support the implementation of new solutions or applications"
     },
     {
         dates: "September 2013 - November 2017",
-        positionAndCompany: "Technical Support Engineer @ HCRB National Academic Orchestra",
+        positionAndCompany: "System Administrator @ HCRB National Academic Orchestra",
         place: "Minsk | ",
         link: "https://orchestra.by",
         responsibilities: "Installing and configuring computer hardware, software, systems, networks, printers, and scanners. Troubleshooting and resolving issues with software, hardware and network. Support the implementation of new solutions or applications"
@@ -43,14 +43,14 @@ export const educationInfo = [
         positionAndCompany : "Front-end developer @ CodeYourPath (online mentorship)",
         place : "CodeYourPath | ", 
         link : "https://codeyourpath.com",
-        responsibilities : "I graduated from my bachelor's degree with excellent grades. I started off with Java and gained a thorough understanding of algorithms. I also completed a minor in web and game development (multimedia)."
+        responsibilities : "During my front-end mentorship journey as a mentee, I acquired a comprehensive set of skills that have significantly enriched my web development capabilities. Through hands-on guidance and collaborative learning, I've honed my proficiency in HTML, CSS, JavaScript and Astro."
     },
     {
         dates : "September 2005 - June 2009",
         positionAndCompany : "Software of mathematical information processing @ Minsk Radioengineering College (bachelor)",
         place : "Minsk | ", 
         link : "https://mrk-bsuir.by/en/",
-        responsibilities : "During my high school years, I developed a good sense of both creative and technical skills. I choose the combined profile of Nature & Health and Nature & Technique, which allowed me to explore my interests in both areas."
+        responsibilities : "I graduated from my bachelor's degree with good grades. I started off with C++ and gained a thorough understanding of algorithms. I also completed a minor in system administration."
     }
 ]
 
