@@ -3,17 +3,20 @@ import { projectData } from "./data/data.js";
 import { Picture } from "astro:assets";
 
 const images = import.meta.glob("/src/assets/images/project/*.{jpeg,jpg,png,gif}");
-
-//TODO: add link on the github project with click on picture or as a lind in description
 ---
 
 <div class="projects-container">
     {
         projectData.map((e) => (
             <div class="project-container">
-                <Picture src={images[e.link]()} formats={["avif", "webp"]} alt={e.alt} class="project-image"/>
-                <div class="overlay">
-                    <span class="text">{e.description}</span>
+                <a href={e.websiteLink}>
+                    <Picture src={images[e.imageSrc]()} formats={["avif", "webp"]} alt={e.alt} class="project-image"/>
+                    <div class="overlay">
+                        <span class="text">{e.name}</span>
+                    </div>
+                </a>
+                <div class="link-overlay">
+                    {e.description} - <a href={e.githubLink}>GitHub</a>
                 </div>
             </div>
         ))
@@ -77,5 +80,15 @@ const images = import.meta.glob("/src/assets/images/project/*.{jpeg,jpg,png,gif}
         text-align: center;
         padding: 0.5rem;
         color: var(--light-color);
+    }
+
+    a {
+        font-weight: 600;
+        text-decoration: none;
+        color: var(--primary-600);
+    }
+
+    :global(.dark) a {
+        color: var(--primary-300);
     }
 </style>

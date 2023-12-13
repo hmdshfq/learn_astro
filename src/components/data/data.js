@@ -63,9 +63,9 @@ export const certificateData = [
 
 //ProjectCard.astro
 export const projectData = [
-    {link: "/src/assets/images/project/English_cert.jpg", alt: "project1", description: "simple project description"},
-    {link: "/src/assets/images/project/English_cert.jpg", alt: "project1", description: "simple project description"},
-    {link: "/src/assets/images/project/English_cert.jpg", alt: "project1", description: "simple project description"}
+    {imageSrc: "/src/assets/images/project/Product_Landing_page.png", alt: "Project product landing page", name: "Product Landing Page", description: "Simple page with pure HTML and CSS", websiteLink: "https://pavelpaliakou.github.io/product_landing_page/", githubLink: "https://github.com/PavelPaliakou/product_landing_page"},
+    {imageSrc: "/src/assets/images/project/Product_Landing_page.png", alt: "Project product landing page", name: "Product Landing Page", description: "Simple page with pure HTML and CSS", websiteLink: "https://pavelpaliakou.github.io/product_landing_page/", githubLink: "https://github.com/PavelPaliakou/product_landing_page"},
+    {imageSrc: "/src/assets/images/project/Product_Landing_page.png", alt: "Project product landing page", name: "Product Landing Page", description: "Simple page with pure HTML and CSS", websiteLink: "https://pavelpaliakou.github.io/product_landing_page/", githubLink: "https://github.com/PavelPaliakou/product_landing_page"}
 ];
 
 //Social.astro
