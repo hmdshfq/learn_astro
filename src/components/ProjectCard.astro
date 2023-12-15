@@ -9,14 +9,14 @@ const images = import.meta.glob("/src/assets/images/project/*.{jpeg,jpg,png,gif}
     {
         projectData.map((e) => (
             <div class="project-container">
-                <a href={e.websiteLink}>
+                <a href={e.websiteLink} target="_blank">
                     <Picture src={images[e.imageSrc]()} formats={["avif", "webp"]} alt={e.alt} class="project-image"/>
                     <div class="overlay">
                         <span class="text">{e.name}</span>
                     </div>
                 </a>
                 <div class="link-overlay">
-                    {e.description} - <a href={e.githubLink}>GitHub</a>
+                    {e.description} - <a href={e.githubLink} target="_blank">GitHub</a>
                 </div>
             </div>
         ))
