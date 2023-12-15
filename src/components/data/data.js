@@ -42,7 +42,7 @@ export const educationInfo = [
         dates : "June 2023 - current",
         positionAndCompany : "Front-end developer @ CodeYourPath (online mentorship)",
         place : "CodeYourPath | ", 
-        link : "https://codeyourpath.com",
+        link : "https://codeyourpath.eu",
         responsibilities : "During my front-end mentorship journey as a mentee, I acquired a comprehensive set of skills that have significantly enriched my web development capabilities. Through hands-on guidance and collaborative learning, I've honed my proficiency in HTML, CSS, JavaScript and Astro."
     },
     {
