@@ -2,6 +2,7 @@
 import ParticalBG from "../ParticalBG.astro";
 import Resume from "../Resume.astro";
 import IDLink from "../../components/IDLink.astro";
+import Social from "../Social.astro";
 ---
 
 <ParticalBG /> 
@@ -15,7 +16,10 @@ import IDLink from "../../components/IDLink.astro";
                 <div class="job-title">
                     <p>Front-end developer</p>
                 </div>
-                <Resume />
+                <div class="welcome-links-container">
+                    <Resume />
+                    <Social />
+                </div>
                     <p>
                         Ready to work for food + rent =)
                     </p>
@@ -47,6 +51,12 @@ import IDLink from "../../components/IDLink.astro";
     .job-title {
         font-size: 2rem;
         font-weight: 700;
+    }
+
+    .welcome-links-container {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
     }
 
     .welcome-img {
