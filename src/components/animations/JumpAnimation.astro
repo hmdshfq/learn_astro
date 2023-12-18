@@ -1,0 +1,101 @@
+---
+
+---
+
+<div class="jump-when-visible">
+    <slot />
+</div>
+
+<style>
+    .jump-animation-up {
+        animation-name: jump-up;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+    }
+
+    .jump-animation-down {
+        animation-name: jump-down;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes jump-up {
+        0% {
+            transform: translateY(0%);
+        }
+        25% {
+            transform: translateY(-30%);
+        }
+        50% {
+            transform: translateY(0%);
+        }
+        75% {
+            transform: translateY(-10%);
+        }
+        100% {
+            transform: translateY(0%);
+        }
+    }
+
+    @keyframes jump-down {
+        0% {
+            transform: translateY(0%);
+        }
+        25% {
+            transform: translateY(30%);
+        }
+        50% {
+            transform: translateY(0%);
+        }
+        75% {
+            transform: translateY(10%);
+        }
+        100% {
+            transform: translateY(0%);
+        }
+    }
+</style>
+
+<script>
+    let jumpElements;
+
+    window.addEventListener(
+        "load",
+        () => {
+            jumpElements = document.querySelectorAll(".jump-when-visible");
+            createJumpObserver();
+        }
+    );
+
+    function createJumpObserver() {
+        let options = {
+            root: null,
+            rootMargin: "0px",
+            threshold: 0.7,
+        };
+
+        let observer = new IntersectionObserver(callback, options);
+
+        jumpElements.forEach((element) => {
+            observer.observe(element);
+        });
+    }
+
+    let callback = (entries) => {
+        entries.forEach((entry) => {
+            const boundingRect = entry.boundingClientRect;
+            const intersectionRect = entry.intersectionRect;
+
+            if (entry.isIntersecting) {
+                if (boundingRect.top < intersectionRect.top) {
+                    entry.target.classList.add("jump-animation-up");
+                } else {
+                    entry.target.classList.add("jump-animation-down");
+                }
+            } else {
+                entry.target.classList.remove("jump-animation-up");
+                entry.target.classList.remove("jump-animation-down");
+            }
+        });
+    };
+</script>

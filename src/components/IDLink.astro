@@ -1,0 +1,23 @@
+---
+const ID = Astro.props;
+---
+<div class="id-link-container">
+    <span id={ID.id} />
+</div>
+
+<style>
+    .id-link-container {
+        position: relative;
+    }
+
+    span {
+        position: absolute;
+        top: 0;
+    }
+
+    @media screen and (min-width: 700px) {
+        span {
+            top: calc(-1 * var(--nav-height));
+        }
+    }
+</style>

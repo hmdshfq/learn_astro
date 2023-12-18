@@ -1,0 +1,79 @@
+---
+import ParticalBG from "../ParticalBG.astro";
+import Resume from "../Resume.astro";
+import IDLink from "../../components/IDLink.astro";
+import Social from "../Social.astro";
+---
+
+<ParticalBG /> 
+<div class="section-container">
+    <IDLink id="welcome"/>
+    <section class="welcome">
+        <div class="welcome-container">
+            <div class="welcome-description">
+                
+                <p>Hello, I'm Pavel</p>
+                <div class="job-title">
+                    <p>Front-end developer</p>
+                </div>
+                <div class="welcome-links-container">
+                    <Resume />
+                    <Social />
+                </div>
+                    <p>
+                        Ready to work for food + rent =)
+                    </p>
+            </div>
+            <div class="welcome-img">
+                <img width="600" height="260" src="/undraw_hello_re_3evm.svg" alt="hello" />
+            </div>
+        </div>
+    </section>
+</div>
+
+<style>
+    .welcome-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        gap: 2rem;
+        height: calc(100vh - var(--nav-height));
+    }
+
+    .welcome-description {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        flex: 1 1 0;
+    }
+
+    .job-title {
+        font-size: 2rem;
+        font-weight: 700;
+    }
+
+    .welcome-links-container {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    .welcome-img {
+        display: none;
+        width: 100%;
+        flex: 1 1 0;
+    }
+
+    img {
+        max-width: 40rem;
+        height: auto;
+        width: 100%;
+    }
+
+    @media screen and (min-width: 700px) {
+        .welcome-img {
+            display: flex;
+        }
+    }
+</style>

@@ -1,13 +1,23 @@
 ---
-import Greeting from '../components/Greeting';
-import BaseLayout from '../layouts/BaseLayout.astro';
-
-const pageTitle = "Home page";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import AboutSection from "../components/sections/AboutSection.astro";
+import WorkSection from "../components/sections/WorkSection.astro";
+import EducationSection from "../components/sections/EducationSection.astro";
+import Projects from "../components/sections/ProjectSection.astro";
+import ContactSection from "../components/sections/ContactSection.astro";
+import WelcomeSection from "../components/sections/WelcomeSection.astro";
 ---
 
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout>
+	<WelcomeSection />
 
-	<h2>My awesome blog subtitle</h2>
-	<Greeting client:load messages={["Hi", "Hello", "Howdy", "Hey there"]} />
-	<Greeting client:load messages={["Hej", "Hallo", "Hola", "Habari"]} />
+	<AboutSection />
+
+	<WorkSection />
+
+	<EducationSection />
+
+	<Projects />
+
+	<ContactSection />
 </BaseLayout>

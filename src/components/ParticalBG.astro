@@ -1,0 +1,27 @@
+---
+
+---
+
+<div id="particles-js"></div>
+
+<script>
+  import "../scripts/particle.js";
+</script>
+
+<style>
+  #particles-js {
+    position: absolute;
+    width: 100%;
+    height: calc(100vh - var(--nav-height));
+    background-color: var(--light-bg);
+    background-image: url("");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+    z-index: -1;
+  }
+
+  html.dark #particles-js {
+    background-color: var(--dark-bg);
+  }
+</style>

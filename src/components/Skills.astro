@@ -1,0 +1,51 @@
+---
+import JumpAnimation from "./animations/JumpAnimation.astro";
+import {skills} from "./data/data.js";
+---
+
+<div class="skills">
+    {skills.map((skill) => (
+        <JumpAnimation>
+            <div class="skill-container">
+                <img src={skill.link} alt=""/>
+                <p>{skill.name}</p>
+            </div>
+        </JumpAnimation>)
+    )}
+</div>
+
+<style>
+    .skills {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .skill-container {
+        display: flex;
+        align-items: center;
+        width: 12rem;
+        height: 4.375rem;
+        margin: 1rem;
+        padding: 0.5rem 1rem;
+        border-radius: var(--border-radius);
+        cursor: pointer;
+    }
+
+    img {
+        width: 3rem;
+        height: 3rem;
+        object-fit: contain;
+    }
+
+    .skills p {
+        font-size: 1rem;
+        margin-left: 1rem;
+    }
+
+    :global(.dark) .skill-container {
+        color: var(--dark-color);
+        background-color: var(--dark-bg-element);
+    }
+</style>

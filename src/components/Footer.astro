@@ -1,20 +1,21 @@
 ---
-import Social from "./Social.astro";
 
-const platform = "github";
-const username = "PavelPaliakou";
 ---
 
-<style>
-    footer {
-      display: flex;
-      gap: 1rem;
-      margin-top: 2rem;
-    }
-</style>
-
 <footer>
-  <Social platform="linkedin" username="pavel-p-4a0724287" />
-  <Social platform="github" username="PavelPaliakou" />
-  <Social platform="youtube" username="astrodotbuild" />
+  <p>Made by Pavel Paliakou</p>
 </footer>
+
+<style>
+  footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 2rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    margin-top: 8rem;
+    margin-bottom: 1rem;
+  }
+</style>

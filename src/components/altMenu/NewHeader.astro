@@ -1,22 +1,22 @@
 ---
-import Hamburger from "./menu/Hamburger.astro";
-import Navigation from "./menu/Navigation.astro";
-import SiteLogo from "./menu/SiteLogo.astro";
-import ThemeIcon from "./menu/ThemeIcon.astro";
+import NewHamburger from './NewHamburger.astro';
+import Navigation from './NewNavigation.astro';
+import SiteLogo from "../menu/SiteLogo.astro";
+import ThemeIcon from '../menu/ThemeIcon.astro';
 ---
 
 <header>
     <SiteLogo />
     <nav>
         <Navigation />
-        <Hamburger />
+        <NewHamburger />
     </nav>
     <ThemeIcon />
 </header>
 
 <style>
     header {
-        position: sticky;
+        position: relative;
         top: 0px;
         z-index: 10;
         display: flex;
@@ -40,6 +40,7 @@ import ThemeIcon from "./menu/ThemeIcon.astro";
 
     @media screen and (min-width: 700px) {
         header {
+            position: sticky;
             justify-content: space-evenly;
         }
     }

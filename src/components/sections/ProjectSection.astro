@@ -1,0 +1,19 @@
+---
+import IDLink from "../../components/IDLink.astro";
+import WaveCoverSeparator from "../../components/WaveCoverSeparator.astro";
+import ProjectCard from "../ProjectCard.astro";
+---
+
+<WaveCoverSeparator>
+    <IDLink id="projects" />
+    <section class="projects">
+        <h1>Projects</h1>
+        <ProjectCard />
+    </section>
+</WaveCoverSeparator>
+
+<style>
+    .projects {
+        min-height: 100vh;
+    }
+</style>

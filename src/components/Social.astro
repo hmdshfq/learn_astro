@@ -1,14 +1,26 @@
 ---
-const { platform, username } = Astro.props;
----
+import {socialLinks} from "./data/data.js";
 
-<a href={`https://www.${platform}.com/${username}`}>{platform}</a>
+const links = socialLinks;
+---
+<div class="social-links">
+    {links.map((link) => (
+        <a href={link.href} aria-label={link.label} class="social-link" target="_blank">
+            <Fragment set:html={link.image} />
+        </a> 
+        )
+    )}
+</div>
 
 <style>
-    a {
-      padding: 0.5rem 1rem;
-      color: white;
-      background-color: #4c1d95;
-      text-decoration: none;
+    .social-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
     }
-  </style>
+
+    :global(.dark) .social-link {
+        fill: var(--dark-color);
+    }
+</style>

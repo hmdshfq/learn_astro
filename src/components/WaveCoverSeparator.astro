@@ -1,0 +1,79 @@
+---
+
+---
+
+<div class="cover-container">
+    <div class="wave-container top">
+        <svg
+            class="svg-top"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 500 30"
+        >
+            <path d="M 0 10 C 145 60 320 0 500 10 L 500 0 L 0 0"></path>
+        </svg>
+    </div>
+
+    <slot />
+
+    <div class="wave-container">
+        <svg
+            class="svg-bottom"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 500 30"
+        >
+            <path d="M 0 10 C 145 60 320 0 500 10 L 500 0 L 0 0"></path>
+        </svg>
+    </div>
+</div>
+
+<style>
+    .cover-container {
+		background-color: var(--light-bg-element);
+	}
+
+	:global(.dark) .cover-container {
+		background-color: var(--gray-900);
+	}
+
+    .wave-container {
+        position: relative;
+        width: 100%;
+    }
+
+    .top {
+        margin-top: 0;
+    }
+
+    svg {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    .svg-top {
+        fill: var(--light-bg);
+        background-color: var(--light-bg-element);
+    }
+
+    :global(.dark) .svg-top {
+        fill: var(--dark-bg);
+        background-color: var(--gray-900);
+    }
+
+    .svg-bottom {
+        fill: var(--light-bg-element);
+        background-color: var(--light-bg);
+    }
+
+    :global(.dark) .svg-bottom {
+        fill: var(--gray-900);
+        background-color: var(--dark-bg);
+    }
+
+    @media screen and (min-width: 700px) {
+        .top {
+            margin-top: 5rem;
+        }
+    }
+</style>

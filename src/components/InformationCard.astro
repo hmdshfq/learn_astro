@@ -1,0 +1,102 @@
+---
+import VerticalLine from "./VerticalLine.astro";
+const cardInfo = Astro.props;
+---
+
+<div class="container">
+    <div class="dates">
+        {cardInfo.dates}
+    </div>
+    <div class="description">
+        <VerticalLine />
+        <div class="position">{cardInfo.positionAndCompany}</div>
+        <p class="place">
+            {cardInfo.place}
+            {
+                cardInfo.link ? (
+                    <a
+                        href={cardInfo.link}
+                        target="_blank"
+                        aria-label={cardInfo.link}
+                    >
+                        {cardInfo.link}
+                    </a>
+                ) : (
+                    ""
+                )
+            }
+        </p>
+        <p class="responsibilities">{cardInfo.responsibilities}</p>
+    </div>
+</div>
+
+<style>
+    .container {
+        display: grid;
+        margin-bottom: 4rem;
+    }
+
+    .dates {
+        padding-left: 3rem;
+        text-transform: uppercase;
+        color: var(--gray-600);
+    }
+
+    :global(.dark) .dates {
+        color: var(--gray-300);
+    }
+
+    .description {
+        position: relative;
+        padding-left: 3rem;
+    }
+
+    .position {
+        margin: 0;
+        font-weight: 700;
+        line-height: 1.75rem;
+        font-size: 1.5rem;
+    }
+
+    .place {
+        line-height: 1.25rem;
+        font-size: 1.25rem;
+        margin: 0;
+        color: var(--gray-600);
+    }
+
+    :global(.dark) .place {
+        color: var(--gray-300);
+    }
+
+    .place a {
+        color: var(--primary-600);
+        text-decoration: none;
+    }
+
+    :global(.dark) .place a {
+        color: var(--primary-300);
+    }
+
+    .responsibilities {
+        margin-top: 1.5rem;
+    }
+
+    @media screen and (min-width: 700px) {
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 2rem;
+            align-items: start;
+            justify-items: end;
+        }
+
+        .dates {
+            padding-left: 0;
+        }
+
+        .description {
+            grid-column: span 2;
+        }
+    }
+</style>

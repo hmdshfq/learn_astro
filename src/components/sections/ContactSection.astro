@@ -1,0 +1,99 @@
+---
+import Social from "../Social.astro";
+import EmailForm from "../EmailForm.astro";
+import IDLink from "../../components/IDLink.astro";
+---
+
+<IDLink id="contact"/>
+<section class="contact">
+    <h1>Contact</h1>
+
+    <div class="contact-message">
+        <h2>Contact with me</h2>
+        <p>
+            If you want to know more about me or my work, send me a message.
+            <br />
+             I'd love to hear from you.
+        </p>
+    </div>
+
+    <div class="contact-container">
+        <EmailForm />
+
+        <div class="contact-info">
+            <div class="info-container">
+                <h2>Email</h2>
+                <a href="mailto:pavel.paliakou0010@gmail.com">pavel.paliakou0010@gmail.com</a>
+            </div>
+            <div class="info-container">
+                <h2>Address</h2>
+                <a href="https://www.google.pl/maps/@52.0344101,19.3919706,6.87z?entry=ttu" target="_blank">Poland</a>
+            </div>
+            <div class="info-container">
+                <h2>Social</h2>
+                <Social />
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .contact {
+        padding-bottom: 0;
+    }
+
+    .contact h2 {
+        text-align: left;
+    }
+
+    .contact-message {
+        width: 100%;
+    }
+
+    .contact-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .contact-info {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        gap: 0;
+    }
+
+    .info-container {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        width: auto;
+    }
+
+    .info-container a {
+        font-weight: 600;
+        text-decoration: none;
+        color: var(--primary-600);
+    }
+
+    :global(.dark) .info-container a {
+        color: var(--primary-300);
+    }
+
+    @media screen and (min-width: 700px) {
+        .contact-container {
+            flex-direction: row;
+        }
+
+        .contact-info {
+            align-items: flex-end;
+            gap: 3rem;
+        }
+
+        .info-container {
+            align-items: flex-end;
+        }
+    }
+</style>

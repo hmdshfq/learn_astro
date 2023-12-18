@@ -1,28 +1,39 @@
 ---
 import Header from "../components/Header.astro";
+import NewHeader from "../components/altMenu/NewHeader.astro";
 import Footer from "../components/Footer.astro";
-import { ViewTransitions } from 'astro:transitions';
+import WaveBg from "../components/WaveBg.astro";
 import "../styles/global.css";
-const {pageTitle} = Astro.props;
+
+const pageTitle = "Pavel Paliakou";
 ---
 
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="author" content="Pavel Paliakou" />
+        <meta name="description" content="Pavel Paliakou full-stack developer protfolio website" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
+        <script defer src="/particles.min.js"></script>
         <title>{pageTitle}</title>
         <ViewTransitions />
     </head>
     <body>
 
-        <Header />
+        <!-- <Header /> -->
+        <NewHeader />
 
-        <h1 transition:animate="slide">{pageTitle}</h1>
-        <slot/>
+        <main>
+            <slot/>
+            <Footer />
+            <WaveBg />
+        </main>
 
-        <Footer />
 
         <script>
             import "../scripts/menu.js";

@@ -1,0 +1,94 @@
+---
+import { projectData } from "./data/data.js";
+import { Picture } from "astro:assets";
+
+const images = import.meta.glob("/src/assets/images/project/*.{jpeg,jpg,png,gif}");
+---
+
+<div class="projects-container">
+    {
+        projectData.map((e) => (
+            <div class="project-container">
+                <a href={e.websiteLink} target="_blank">
+                    <Picture src={images[e.imageSrc]()} formats={["avif", "webp"]} alt={e.alt} class="project-image"/>
+                    <div class="overlay">
+                        <span class="text">{e.name}</span>
+                    </div>
+                </a>
+                <div class="link-overlay">
+                    {e.description} - <a href={e.githubLink} target="_blank">GitHub</a>
+                </div>
+            </div>
+        ))
+    }
+</div>
+
+<style>
+    .projects-container {
+        width: 100%;
+
+        /* Flex */
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+
+        /* Grid */
+        /* display: grid;
+        grid-gap: 2rem;
+        grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));  */
+    }
+
+    .project-container {
+        position: relative;
+        margin-top: 2rem;
+        max-width: 300px;
+        width: 100%;
+        height: 230px;
+        box-shadow: var(--shadow-low);
+    }
+
+    .project-image {
+        border-radius: var(--border-radius);
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .overlay {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        cursor: pointer;
+        border-radius: var(--border-radius);
+        transition: 0.5s ease;
+        backdrop-filter: blur(20px);
+    }
+
+    .project-container:hover .overlay {
+        opacity: 1;
+    }
+
+    .text {
+        font-size: 2rem;
+        font-weight: 600;
+        text-align: center;
+        padding: 0.5rem;
+        color: var(--light-color);
+    }
+
+    a {
+        font-weight: 600;
+        text-decoration: none;
+        color: var(--primary-600);
+    }
+
+    :global(.dark) a {
+        color: var(--primary-300);
+    }
+</style>

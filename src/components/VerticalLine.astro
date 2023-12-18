@@ -1,0 +1,33 @@
+---
+
+---
+<span class="v-line"></span>
+<span class="circle"></span>
+
+<style>
+    .v-line {
+        position: absolute;
+        display: block;
+        width: 1px;
+        height: 100%;
+        margin-left: -39px;
+        background-color: var(--gray-500);
+    }
+    
+    .circle {
+        position: absolute;
+        width: 1.25rem;
+        height: 1.25rem;
+        background-color: var(--light-bg);
+        border-width: 2px;
+        border-style: solid;
+        border-color: var(--gray-500);
+        border-radius: 50%;
+        margin-top: 0.325rem;
+        margin-left: -3rem;
+    }
+
+    :global(.dark) .circle {
+        background-color: var(--dark-bg);
+    }
+</style>
