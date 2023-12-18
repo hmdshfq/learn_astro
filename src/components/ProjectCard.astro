@@ -2,21 +2,33 @@
 import { projectData } from "./data/data.js";
 import { Picture } from "astro:assets";
 
-const images = import.meta.glob("/src/assets/images/project/*.{jpeg,jpg,png,gif}");
+const images = import.meta.glob(
+    "/src/assets/images/project/*.{jpeg,jpg,png,gif}",
+);
 ---
 
 <div class="projects-container">
     {
         projectData.map((e) => (
             <div class="project-container">
-                <a href={e.websiteLink} target="_blank">
-                    <Picture src={images[e.imageSrc]()} formats={["avif", "webp"]} alt={e.alt} class="project-image"/>
-                    <div class="overlay">
-                        <span class="text">{e.name}</span>
-                    </div>
-                </a>
+                <div class="image-container">
+                    <a href={e.websiteLink} target="_blank">
+                        <Picture
+                            src={images[e.imageSrc]()}
+                            formats={["avif", "webp"]}
+                            alt={e.alt}
+                            class="project-image"
+                        />
+                        <div class="overlay">
+                            <span class="text">{e.name}</span>
+                        </div>
+                    </a>
+                </div>
                 <div class="link-overlay">
-                    {e.description} - <a href={e.githubLink} target="_blank">GitHub</a>
+                    {e.description} -{" "}
+                    <a href={e.githubLink} target="_blank">
+                        GitHub
+                    </a>
                 </div>
             </div>
         ))
@@ -42,8 +54,12 @@ const images = import.meta.glob("/src/assets/images/project/*.{jpeg,jpg,png,gif}
     }
 
     .project-container {
+        max-width: 300px;
+        width: 100%;
+    }
+
+    .image-container {
         position: relative;
-        margin-top: 2rem;
         max-width: 300px;
         width: 100%;
         height: 230px;
